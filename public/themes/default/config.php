@@ -61,8 +61,7 @@ return array(
             $theme->asset()->add('bootstrap.min.js', 'assets/js/bootstrap.min.js');
             $theme->asset()->add('bootstrap.min.css', 'assets/css/bootstrap.min.css');
             $theme->asset()->add('socket','https://cdn.socket.io/socket.io-1.3.4.js');
-            $theme->asset()->add('scroll-css', 'assets/js/jquery.mCustomScrollbar.css');
-            $theme->asset()->add('scroll-css', 'assets/js/jquery.mCustomScrollbar.concat.min.js');
+            $theme->asset()->add('scroll-js', 'assets/js/jquery.mCustomScrollbar.concat.min.js');
             $theme->asset()->add('scroll-css', 'assets/css/jquery.mCustomScrollbar.css');
 
             // You may use this event to set up your assets.

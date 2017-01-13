@@ -20,9 +20,9 @@
             }
             .user-list{
                 height: 100%;
-                height: 520px;
-                padding: 15px 15px 5px 15px;
-
+                padding: 125px 15px 5px 15px;
+                position: relative;
+                bottom: 110px;
             }
                 .user-list ul{
                     padding: 0;
@@ -30,12 +30,51 @@
                     .user-list ul li{
                         list-style: none;
                         padding: 7px 0px;
-                    }
+                    }li.card-board{
+                        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                        background: gray;
+                        margin-bottom: 5px;
+                     }.card-content{
+                        padding: 0px 10px 0px 10px;
+                        position: relative;
+                     }
                         .user-list ul li img{
                             background-color: #ffffff;
                             border-radius: 50%;
                             width: 50px;
                             height: 50px;
+                        }
+                        .user-name{
+                            color: white;
+                            font-size: 13px;
+                            font-weight: lighter;
+                            position: relative;
+                            left: 10px;
+                            top: -8px;
+                        }.active{
+                             width: 10px;
+                             height: 10px;
+                             background-color: green;
+                             position: absolute;
+                             left: 72px;
+                             border-radius: 50%;
+                             /* display: block; */
+                             top: 30px;
+                        }.not-active{
+                              width: 10px;
+                              height: 10px;
+                              background-color: red;
+                              position: absolute;
+                              left: 72px;
+                              border-radius: 50%;
+                              /* display: block; */
+                              top: 30px;
+                        }.status{
+                               position: absolute;
+                               top: 28px;
+                               left: 85px;
+                               font-size: 11px;
+                               font-style: italic;
                         }
             
             .bottom-nav{
@@ -67,9 +106,40 @@
             width: 80%;
             height: 100%;
             float: right;
+            position: relative;
         }
+            .current-user{
+                width: 100%;
+                padding: 20px;
+                border-bottom: 1px solid #434753;
 
+            }
+                .current-user img{
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                }
+            .chat-input-container{
+                position: absolute;
+                bottom: 0;
+                height: 150px;
+                width: 100%;
+                border-top: 1px solid #434753;
+            }
+                .chat-input{
+                    padding: 20px 20px 0px 30px;
+                }
+                    .chat-input textarea{
+                        resize: none;
+                    }
+                    .chat-input input[type="button"]{
+                        margin-top: 12px;
+                        margin-left: 20px;
+                    }
 
+    .mCSB_inside > .mCSB_container {
+        margin-right: 20px;
+    }
 
     
 </style>
@@ -81,61 +151,22 @@
        </div>
         <div class="col-md-12 user-list">
             <ul >
-                <li>
-                    <img>
-                    <span>Name</span>
+                <li class="card-board">
+                    <div class="card-content">
+                        <img src="../assets/images/background.jpg">
+                        <span class="user-name">Carecen</span>
+                        <div class="active"></div>
+                        <span class="status">online</span>
+                    </div>
                 </li>
-                <li>
-                    <img>
-                    <span>Name</span>
+                <li class="card-board">
+                    <div class="card-content">
+                        <img src="../assets/images/background.jpg">
+                        <span class="user-name">Legal Provider</span>
+                        <div class="not-active"></div>
+                        <span class="status">offline</span>
+                    </div>
                 </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-                <li>
-                    <img>
-                    <span>Name</span>
-                </li>
-
-
-
             </ul>
 
         </div>
@@ -157,7 +188,27 @@
        </div>
     </div>
     <div class="right-container">
-      
+        <div class="current-user">
+            <img src="../assets/images/background.jpg">
+            <span style="font-size: 18px;font-weight: 900">Carecen</span>
+        </div>
+        <div class="chat-body">
+
+        </div>
+        <div class="chat-input-container">
+            <div class="col-md-12 chat-input">
+                <div class="col-md-10" >
+                    <div class="row">
+                        <textarea class="form-control chat-area" placeholder="Enter Message.." rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="button" class="btn btn-primary btn-lg send-chat" value="Send">
+                </div>
+            </div>
+
+
+        </div>
 
     </div>
 </div>
@@ -166,18 +217,16 @@
 
     var socket = io.connect('127.0.0.1:8890');
     $(document).ready(function(){
-        $('.user-list').mCustomScrollbar({
+        $('.user-list').mCustomScrollbar();
 
-        });
-
-        $('form').submit(function(){
-            socket.emit('chat message', $('#m').val());
-            $('#m').val('');
+        $('.send-chat').on('click',function(){
+            socket.emit('chat message', $('.chat-area').val());
+            $('.chat-area').val('');
             return false;
         });
 
         socket.on('chat message', function(msg){
-            $('#messages').append($('<li>').text(msg));
+            $('.chat-body').append($('<li>').text(msg));
         });
     });
 
