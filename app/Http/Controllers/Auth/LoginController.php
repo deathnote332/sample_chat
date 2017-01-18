@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
@@ -25,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -35,5 +40,28 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+    }
+
+    public function submitlogin(){
+
+        $user = Input::get('username');
+        $password = Input::get('password');
+
+        if(Auth::attempt(['email'=>$user,'password'=>$password])){
+            $id  = Auth::user()->id;
+
+            DB::table('users')->where('id',$id)->update(['status'=>1]);
+
+            return Redirect::to('/chat');
+        }else{
+            return Redirect::to('/');
+        }
+    }
+
+    public function logout(){
+        $id = Auth::user()->id;
+        DB::table('users')->where('id',$id)->update(['status'=>0]);
+        Auth::logout();
+        return Redirect::to('/');
     }
 }

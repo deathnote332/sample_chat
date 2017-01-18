@@ -17,6 +17,7 @@
         }
             .search{
                 padding-top: 10px;
+                z-index: 1000;
             }
             .user-list{
                 height: 100%;
@@ -31,10 +32,14 @@
                         list-style: none;
                         padding: 7px 0px;
                     }li.card-board{
-                        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
                         background: gray;
                         margin-bottom: 5px;
-                     }.card-content{
+                     }li.card-board:hover{
+                        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                        background: darkgray;
+                     }
+                     .card-content{
                         padding: 0px 10px 0px 10px;
                         position: relative;
                      }
@@ -119,6 +124,29 @@
                     height: 70px;
                     border-radius: 50%;
                 }
+            .chat-body{
+                height: 100%;
+                padding: 265px 15px 5px 15px;
+                position: relative;
+                bottom: 260px;
+            }
+                .chat-body ul{
+                    padding: 0;
+                }
+                .chat-body ul li{
+                    list-style: none;
+                    padding: 10px 0px;
+                }
+                    .chat-body ul li img{
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                    }
+
+                    .right-user{
+                        text-align: right;
+                    }
+
             .chat-input-container{
                 position: absolute;
                 bottom: 0;
@@ -137,6 +165,7 @@
                         margin-left: 20px;
                     }
 
+
     .mCSB_inside > .mCSB_container {
         margin-right: 20px;
     }
@@ -147,26 +176,11 @@
 <div class="chat-container">
     <div class="left-container">
        <div class="search col-md-12">
-           <input class="form-control" type="text" placeholder="Search">
+           <input id="search_user" class="form-control" type="text" placeholder="Search">
        </div>
         <div class="col-md-12 user-list">
-            <ul >
-                <li class="card-board">
-                    <div class="card-content">
-                        <img src="../assets/images/background.jpg">
-                        <span class="user-name">Carecen</span>
-                        <div class="active"></div>
-                        <span class="status">online</span>
-                    </div>
-                </li>
-                <li class="card-board">
-                    <div class="card-content">
-                        <img src="../assets/images/background.jpg">
-                        <span class="user-name">Legal Provider</span>
-                        <div class="not-active"></div>
-                        <span class="status">offline</span>
-                    </div>
-                </li>
+            <ul class="active-list">
+
             </ul>
 
         </div>
@@ -190,10 +204,19 @@
     <div class="right-container">
         <div class="current-user">
             <img src="../assets/images/background.jpg">
-            <span style="font-size: 18px;font-weight: 900">Carecen</span>
+            <span style="font-size: 18px;font-weight: 900"  id="current_user" data-user_id="{{ Auth::user()->id }}" data-user_name="{{ Auth()->user()->name }}">{{ Auth::user()->name }}</span>
         </div>
-        <div class="chat-body">
-
+        <div class="chat-body col-md-12">
+            <ul>
+<!--                <li class="left-user">-->
+<!--                    <img src="../assets/images/background.jpg">-->
+<!--                    <span>{{ Auth()->user()->name }}</span>-->
+<!--                    <div></div>-->
+<!--                </li>-->
+<!--                <li class="right-user" style="text-align: right">-->
+<!--                   asdasd-->
+<!--                </li>-->
+            </ul>
         </div>
         <div class="chat-input-container">
             <div class="col-md-12 chat-input">
@@ -207,27 +230,102 @@
                 </div>
             </div>
 
-
         </div>
-
     </div>
 </div>
 
-<script>
 
-    var socket = io.connect('127.0.0.1:8890');
+<script>
+    var socket = io.connect('192.168.1.193:8891');
     $(document).ready(function(){
-        $('.user-list').mCustomScrollbar();
+        var BASEURL = $('#baseURL').val();
+        $('.active-list').mCustomScrollbar();
+
+
+
+        $('#search_user').on('keyup',function(){
+
+            var that = this, $allListElements = $('.active-list > li');
+            var $matchingListElements = $allListElements.filter(function(i, li){
+                var listItemText = $(li).text().toUpperCase(),
+                    searchText = that.value.toUpperCase();
+                return ~listItemText.indexOf(searchText);
+            });
+            $allListElements.hide();
+            $matchingListElements.show();
+
+        });
+
+        loadActive();
+
+
+
+        $('body').delegate('.card-board','click',function(){
+            $('.current-user span').text($(this).children('.card-content').children('.user-name').text())
+            //load chat data
+        })
+
+        socket.emit('current-user',{ user_active: true });
 
         $('.send-chat').on('click',function(){
-            socket.emit('chat message', $('.chat-area').val());
-            $('.chat-area').val('');
-            return false;
+            var input =  $('.chat-area').val();
+            if(input!=''){
+                socket.emit('chat message',{user_id:$('#current_user').data('user_id'),msg:$('.chat-area').val(),user_name:$('#current_user').data('user_name')});
+                $('.chat-area').val('');
+                return false;
+            }else{
+                return false;
+            }
         });
 
-        socket.on('chat message', function(msg){
-            $('.chat-body').append($('<li>').text(msg));
+        socket.on('chat message', function(data){
+
+            if(data.user_id==$('#current_user').data('user_id')){
+                $('.chat-body ul').append($('<li class="right-user">').text(data.msg));
+                $(".chat-body").mCustomScrollbar({
+                    //your options...
+                }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
+
+            }else{
+                $('.chat-body ul').append($('<li><img src="../assets/images/background.jpg"><span>'+data.user_name+'</span><div>'+ data.msg +'</div></li>'));
+                $(".chat-body").mCustomScrollbar({
+                    //your options...
+                }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
+
+            }
+
+
+
         });
+
+        socket.on('current-user',function(data){
+         if(data.user_active){
+             loadActive();
+         }
+        });
+
+
+
     });
+
+    function loadActive(){
+        var BASEURL = $('#baseURL').val();
+        $.ajax({
+            url: BASEURL + '/activeUser',
+            type: 'get',
+            data:{
+                '_token': $('meta[name="csrf_token"]').attr('content')
+            },
+            success:function(data){
+                $('.active-list').html(data)
+
+            }
+        });
+    }
+
+    function loadMessages(){
+
+    }
+
 
 </script>

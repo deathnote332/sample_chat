@@ -15,5 +15,26 @@
 //    return view('welcome');
 //});
 
-Route::match(array('GET','POST'),'homepage',   'HomeController@home');
-Route::match(array('GET','POST'),'chat',   'HomeController@chat');
+Route::match(array('GET','POST'),'submitlogin',   'Auth\LoginController@submitlogin');
+Route::match(array('GET','POST'),'logout',   'Auth\LoginController@logout');
+
+Route::match(array('GET','POST'),'/',   'HomeController@home');
+
+
+Route::group(['middleware'=>['afterAuth']],function(){
+    Route::match(array('GET','POST'),'/',   'HomeController@home');
+});
+
+Route::group(['middleware'=>['auth']],function(){
+
+    Route::match(array('GET','POST'),'chat',   'HomeController@chat');
+    Route::match(array('GET','POST'),'homepage',   'HomeController@home');
+    Route::match(array('GET','POST'),'insertUser',   'HomeController@insertUser');
+    Route::match(array('GET','POST'),'activeUser',   'HomeController@activeUser');
+
+
+});
+
+
+
+

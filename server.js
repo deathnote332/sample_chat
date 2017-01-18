@@ -5,15 +5,15 @@ var app = require('express')();
 var server =  require('http').Server(app);
 var io = require('socket.io')(server);
 
-server.listen(8890);
+server.listen(8891);
 
 io.on('connection', function (socket) {
 
     console.log("client connected");
 
 
-    socket.on('notification',function(e){
-        io.emit('notification',e) ;
+    socket.on('current-user',function(e){
+        io.emit('current-user',e) ;
     });
 
     socket.on('chat message', function(msg){
