@@ -106,11 +106,11 @@
                         height: 30px;
                         background-color: #ffffff;
                     }
-        
+
         .right-container{
-            width: 80%;
+            width: 50%;
             height: 100%;
-            float: right;
+            float: left;
             position: relative;
         }
             .current-user{
@@ -165,6 +165,52 @@
                         margin-left: 20px;
                     }
 
+        .friend-list-container{
+            width: 30%;
+            height: 100%;
+            float: right;
+            position: relative;
+            background-color: gray;
+        }
+            .friend-list-container .row{
+                margin: 0px;
+                z-index: 1000;
+            }
+            .friend-list-container .col-md-8{
+                padding: 20px;
+            }
+            .friend-list-container .col-md-4{
+                padding: 10px;
+                margin-left: -20px;
+                z-index: 1000;
+            }
+        .search-list{
+            height: 100%;
+            position: relative;
+            bottom: 75px;
+            padding: 65px 20px 1px;
+        }
+            .search-list ul{
+                list-style: none;
+                padding: 5px;
+            }
+            .search-list ul li{
+                background: darkgray;
+                padding: 5px 5px 15px;
+                margin-bottom: 5px;
+            }
+                .search-card-data{
+                    margin-bottom: 10px;
+                }
+                .search-card-data input[type="submit"]{
+                    float: right;
+                    margin: 22px 3px;
+                }
+            .search-list ul li img{
+                height: 60px;
+                width: 60px;
+                margin: 10px 10px 0px;
+            }
 
     .mCSB_inside > .mCSB_container {
         margin-right: 20px;
@@ -218,6 +264,7 @@
 <!--                </li>-->
             </ul>
         </div>
+
         <div class="chat-input-container">
             <div class="col-md-12 chat-input">
                 <div class="col-md-10" >
@@ -232,6 +279,32 @@
 
         </div>
     </div>
+
+    <div class="friend-list-container">
+        <div class="row">
+            <div class="search col-md-8">
+                <input id="search_user_list" class="form-control" type="text" placeholder="Enter name">
+            </div>
+            <div class="col-md-4">
+                <input type="submit" id="search-btn" value="Search Friend" class="btn btn-primary" style="margin: 10px">
+            </div>
+        </div>
+        <div class="search-list col-md-12">
+            <ul class="user-friend-list">
+<!--                <li>-->
+<!--                    <div class="search-card-data">-->
+<!--                        <img>-->
+<!--                        <span>Name</span>-->
+<!--                        <input type="submit" value="+" class="btn btn-primary">-->
+<!--                    </div>-->
+<!--                </li>-->
+
+            </ul>
+        </div>
+
+
+    </div>
+
 </div>
 
 
@@ -241,7 +314,8 @@
         var BASEURL = $('#baseURL').val();
         $('.active-list').mCustomScrollbar();
 
-
+        loadSearchList();
+        $('.user-friend-list').hide();
 
         $('#search_user').on('keyup',function(){
 
@@ -253,6 +327,36 @@
             });
             $allListElements.hide();
             $matchingListElements.show();
+        });
+
+
+        $('#search_user_list').on('keyup',function(){
+
+            if($(this).val()==null && $(this).val()==''){
+                $('.user-friend-list').hide();
+                alert(this)
+            }
+        });
+
+        $('#search-btn').on('click',function(){
+
+            if($('#search_user_list').val()!=null && $('#search_user_list').val()!=''){
+
+                var that = $('#search_user_list')[0], $allListElements = $('.user-friend-list > li');
+                var $matchingListElements = $allListElements.filter(function(i, li){
+                    var listItemText = $(li).text().toUpperCase(),
+                        searchText = that.value.toUpperCase();
+                    return ~listItemText.indexOf(searchText);
+
+                });
+
+                $allListElements.hide();
+                $matchingListElements.show();
+                $('.user-friend-list').show();
+            }else{
+
+                $('.user-friend-list').hide();
+            }
 
         });
 
@@ -294,8 +398,6 @@
 
             }
 
-
-
         });
 
         socket.on('current-user',function(data){
@@ -311,7 +413,7 @@
     function loadActive(){
         var BASEURL = $('#baseURL').val();
         $.ajax({
-            url: BASEURL + '/activeUser',
+            url: BASEURL + '/getChat',
             type: 'get',
             data:{
                 '_token': $('meta[name="csrf_token"]').attr('content')
@@ -323,8 +425,35 @@
         });
     }
 
-    function loadMessages(){
+//    function loadSearchList(){
+//        var BASEURL = $('#baseURL').val();
+//        $.ajax({
+//            url: BASEURL + '/getFriendList',
+//            type: 'get',
+//            data:{
+//                '_token': $('meta[name="csrf_token"]').attr('content')
+//            },
+//            success:function(data){
+//                $('.user-friend-list').html(data)
+//
+//            }
+//        });
+//    }
 
+    function loadSearchList(){
+        var BASEURL = $('#baseURL').val();
+        $.ajax({
+            url: BASEURL + '/searchUser',
+            type: 'post',
+            data:{
+                '_token': $('meta[name="csrf_token"]').attr('content'),
+
+            },
+            success:function(data){
+                $('.user-friend-list').html(data)
+
+            }
+        });
     }
 
 
