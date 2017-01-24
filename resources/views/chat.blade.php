@@ -2,309 +2,446 @@
     html,body, .chat-container{
         width: 100%;
         height: 100%;
-
     }
     .chat-container{
         position: relative;
-
     }
-        .left-container{
-            width: 20%;
+        .inbox-container,.friend-list-container,.user-chat-container,.user-profile-container{
+            position: relative;
             height: 100%;
+            display: block;
             float: left;
-            background-color: #434753;
+        }
+
+        .inbox-container{
+            width: 15%;
+            background-color: #1d232a;
+            color: white;
             position: relative;
         }
-            .search{
-                padding-top: 10px;
-                z-index: 1000;
-            }
-            .user-list{
-                height: 100%;
-                padding: 125px 15px 5px 15px;
-                position: relative;
-                bottom: 110px;
-            }
-                .user-list ul{
-                    padding: 0;
-                }
-                    .user-list ul li{
-                        list-style: none;
-                        padding: 7px 0px;
-                    }li.card-board{
-
-                        background: gray;
-                        margin-bottom: 5px;
-                     }li.card-board:hover{
-                        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-                        background: darkgray;
-                     }
-                     .card-content{
-                        padding: 0px 10px 0px 10px;
-                        position: relative;
-                     }
-                        .user-list ul li img{
-                            background-color: #ffffff;
-                            border-radius: 50%;
-                            width: 50px;
-                            height: 50px;
-                        }
-                        .user-name{
-                            color: white;
-                            font-size: 13px;
-                            font-weight: lighter;
-                            position: relative;
-                            left: 10px;
-                            top: -8px;
-                        }.active{
-                             width: 10px;
-                             height: 10px;
-                             background-color: green;
-                             position: absolute;
-                             left: 72px;
-                             border-radius: 50%;
-                             /* display: block; */
-                             top: 30px;
-                        }.not-active{
-                              width: 10px;
-                              height: 10px;
-                              background-color: red;
-                              position: absolute;
-                              left: 72px;
-                              border-radius: 50%;
-                              /* display: block; */
-                              top: 30px;
-                        }.status{
-                               position: absolute;
-                               top: 28px;
-                               left: 85px;
-                               font-size: 11px;
-                               font-style: italic;
-                        }
-            
-            .bottom-nav{
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                height: 60px;
-            }
-                .bottom-nav ul{
-                    display: block;
-                    margin-bottom: 0px;
-                    border-top: solid 1px #ffffff;
-                    padding: 10px 0px 0px 10px;
-
-                }
-                    .bottom-nav ul li{
-                        display: inline-block;
-                        padding: 5px 15px 0px 15px;
-
-                    }
-                    .bottom-nav ul li img{
-
-                        width: 30px ;
-                        height: 30px;
-                        background-color: #ffffff;
-                    }
-
-        .right-container{
-            width: 50%;
-            height: 100%;
-            float: left;
-            position: relative;
-        }
-            .current-user{
-                width: 100%;
+            .inbox-header{
                 padding: 20px;
-                border-bottom: 1px solid #434753;
-
             }
-                .current-user img{
-                    width: 70px;
-                    height: 70px;
+                .inbox-header span{
+                    font-size: 16px;
+                    font-weight: 900;
+                }
+                .inbox-header img{
+                    width: 35px;
+                    height: 35px;
                     border-radius: 50%;
+                    position: relative;
+                    left: 75px;
                 }
-            .chat-body{
-                height: 100%;
-                padding: 265px 15px 5px 15px;
+        .inbox-list ul{
+            padding: 0px;
+
+        }
+            .inbox-list ul li{
+                list-style-type: none;
+                padding: 10px 10px 10px 15px;
                 position: relative;
-                bottom: 260px;
+                background-color: #343c45;
+                margin: 5px 15px;
+                border-radius: 5px;
             }
-                .chat-body ul{
-                    padding: 0;
+                .inbox-list ul li span:nth-child(2){
+                    position: absolute;
+                    right: 0px;
+                    margin-right: 10px;
                 }
-                .chat-body ul li{
-                    list-style: none;
-                    padding: 10px 0px;
-                }
-                    .chat-body ul li img{
-                        height: 40px;
-                        width: 40px;
-                        border-radius: 50%;
-                    }
 
-                    .right-user{
-                        text-align: right;
-                    }
-
-            .chat-input-container{
-                position: absolute;
-                bottom: 0;
-                height: 150px;
-                width: 100%;
-                border-top: 1px solid #434753;
-            }
-                .chat-input{
-                    padding: 20px 20px 0px 30px;
-                }
-                    .chat-input textarea{
-                        resize: none;
-                    }
-                    .chat-input input[type="button"]{
-                        margin-top: 12px;
-                        margin-left: 20px;
-                    }
 
         .friend-list-container{
-            width: 30%;
-            height: 100%;
-            float: right;
-            position: relative;
-            background-color: gray;
+            width: 25%;
+            background-color: #242a31;
         }
-            .friend-list-container .row{
+            .search-friend{
+                padding: 20px 30px;
+                border-bottom: 1px solid #363d45;
+            }
+                .search-border{
+                    background-color: #363d45;
+                    padding: 5px 20px;
+                    border-radius: 35px;
+                    position: relative;
+                    width: 100%;
+
+                }
+                    .search-border input[type='text']{
+                        outline: none;
+                        background-color: transparent;
+                        padding-left: 25px;
+                        border: none;
+                        color:white;
+                        background: url('../assets/images/search.png') no-repeat left/15px;
+                    }
+                    .search-border input[type='text'],.search-border input[type='text']:focus{
+                        outline: none;
+                        border-color: inherit;
+                        -webkit-box-shadow: none;
+                        box-shadow: none;
+                    }
+            .friend-list{
+                height: 86%;
                 margin: 0px;
-                z-index: 1000;
+                padding: 0px 10px;
             }
-            .friend-list-container .col-md-8{
-                padding: 20px;
+            .friend-list ul{
+                padding: 0px;
+                margin-top: 5px;
             }
-            .friend-list-container .col-md-4{
-                padding: 10px;
-                margin-left: -20px;
-                z-index: 1000;
-            }
-        .search-list{
-            height: 100%;
-            position: relative;
-            bottom: 75px;
-            padding: 65px 20px 1px;
+                .friend-list ul li{
+                    list-style-type: none;
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 5px;
+                    color:white;
+                    background: #1d232a;
+                    position: relative;
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                }
+                    .friend-image{
+                        width: 30%;
+                    }
+                    .friend-list ul li img{
+                        height: 60px;
+                        width: 60px;
+                        border-radius: 50%;
+                    }
+                    .friend-data{
+                        position: absolute;
+                        right: 0px;
+                        width:70%;
+                        top: 20px;
+                    }
+                        .friend-name{
+                            font-size: 15px;
+                        }
+
+                        .friend-message{
+                            position: relative;
+                            padding-top: 5px;
+                            font-size: 11px;
+                            width: 80%;
+                        }
+                        .friend-ago{
+                            position: relative;
+                            width: 20%;
+                            right: 0px;
+                            float: right;
+                            font-size: 11px;
+                            top: -15px;
+                        }
+
+
+
+        .user-chat-container{
+            width: 40%;
+            background-color: #eaecf0;
         }
-            .search-list ul{
-                list-style: none;
-                padding: 5px;
+            .user-chat-header{
+                margin: 0;
+                padding: 2px;
+                border-bottom: 1px solid #363d45;
             }
-            .search-list ul li{
-                background: darkgray;
-                padding: 5px 5px 15px;
+                .user-chat-container{
+                    display: block;
+                }
+                .user-chat-header ul{
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                }
+                    .user-chat-header div{
+                        display: inline-block;
+                        list-style-type: none;
+                        height: 80px;
+                        text-align: center;
+                        padding: 32px 0px 10px 5px;
+
+                    }
+                        .user-chat-header div:nth-child(1){
+                            width: 65%;
+                            text-align: left;
+                            padding-left: 30px;
+                        }
+                        .user-chat-header div:nth-child(2),.user-chat-header div:nth-child(3),.user-chat-header div:nth-child(4){
+                            width: 10%;
+
+                            text-align: center;
+                        }
+
+                    .user-chat-header div img{
+                        height: 30px;
+                        width: 30px;
+                    }
+            .user-chat-body{
+                height: 75%;
+
+            }
+            .user-chat-body ul{
+                margin: 0;
+                padding: 0;
+            }
+            .user-chat-body ul li{
+                list-style-type: none;
                 margin-bottom: 5px;
             }
-                .search-card-data{
-                    margin-bottom: 10px;
+                .left-user{
+                    display: block;
                 }
-                .search-card-data input[type="submit"]{
-                    float: right;
-                    margin: 22px 3px;
+                
+                .left-user div{
+                    display: inline-block;
+                    vertical-align: top;
                 }
-            .search-list ul li img{
-                height: 60px;
-                width: 60px;
-                margin: 10px 10px 0px;
+
+                .left-user-image{
+                    padding: 10px;
+                }
+                .left-user-image img{
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                }
+
+                .left-user-message{
+                    padding: 10px;
+                    background-color: white;
+                    width: 85%;
+                    position: relative;
+                    top: 10px;
+
+                }
+                .left-user-message span{
+                    word-wrap: break-word;
+                }
+
+
+            .user-chat-footer{
+                position: absolute;
+                bottom:0px;
+                display: block;
+                width: 100%;
+                padding: 0px 0px 10px 0px;
+                border-top: 1px solid #363d45;
+
             }
+                .user-chat-footer div{
+                    display: inline-block;
+                    text-align: center;
+                }
+                    .user-chat-footer div:nth-child(1),.user-chat-footer div:nth-child(3),.user-chat-footer div:nth-child(4){
+                        width: 10%;
+                        position: relative;
+                        top: -15px;
+                    }
+                    .user-chat-footer div img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                    .chat-area{
+                        width: 65%;
+                        top: 15px;
+                        position: relative;
+                    }
+
+                    .chat-area textarea{
+                        outline: none;
+                        background-color: transparent;
+                        padding-top: 10px;
+                        border: none;
+                        color:black;
+                        resize: none;
+
+                     }
+                    .chat-area textarea,.chat-area textarea:focus{
+                        outline: none;
+                        border-color: inherit;
+                        -webkit-box-shadow: none;
+                        box-shadow: none;
+                    }
+
+        .user-profile-container{
+            width: 20%;
+
+        }
+            .user-profile-header{
+                padding: 32px 15px;
+                border-bottom: 1px solid #363d45;
+            }
+            .user-profile-header img{
+                width: 30px;
+                height: 30px;
+
+            }
+            .user-profile-image{
+                padding: 30px 0px;
+                border-bottom: 1px solid #363d45;
+                text-align: center;
+            }
+            .user-profile-image img{
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+            }
+            .user-profile-name{
+                padding-top: 10px;
+                font-size: 18px;
+                font-weight: 700;
+            }
+            .user-profile-data{
+                height: 50%;
+            }
+            .user-profile-data ul{
+                padding: 10px 0px;
+             }
+            .user-profile-data ul li{
+                list-style-type: none;
+                padding: 10px 15px;
+                border-bottom: 1px solid #363d45;
+
+            }
+            .user-profile-data ul li:last-child{
+                border-bottom: none;
+            }
+            .user-profile-data ul span{
+                float: right;
+            }
+
 
     .mCSB_inside > .mCSB_container {
         margin-right: 20px;
     }
 
-    
 </style>
 
 <div class="chat-container">
-    <div class="left-container">
-       <div class="search col-md-12">
-           <input id="search_user" class="form-control" type="text" placeholder="Search">
+   <div class="inbox-container">
+       <div class="inbox-header cold-md-12">
+           <span>Inbox</span>
+           <img src="../assets/images/background.jpg">
        </div>
-        <div class="col-md-12 user-list">
-            <ul class="active-list">
-
-            </ul>
-
-        </div>
-       <div class="bottom-nav">
+       <div class="inbox-list">
            <ul>
                <li>
-                   <img >
+                   <span>All Messages</span>
+                   <span>21</span>
                </li>
                <li>
-                   <img >
+                   <span>Unread</span>
+                   <span>29</span>
                </li>
                <li>
-                   <img >
-               </li>
-               <li>
-                   <img >
+                   <span>Important</span>
+                   <span>6</span>
                </li>
            </ul>
        </div>
-    </div>
-    <div class="right-container">
-        <div class="current-user">
+   </div>
+   <div class="friend-list-container">
+       <div class="search-friend col-md-12">
+            <div class="search-border">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+       </div>
+       <div class="friend-list col-md-12">
+           <ul class="friend-list-data">
+
+               <li class="friend-profile">
+                   <div class="friend-image">
+                       <img src="../assets/images/background.jpg">
+                   </div>
+                   <div class="friend-data">
+                       <span>Matt Thompson</span>
+                       <div class="friend-message">
+                           <span>Thanks again you have been..</span>
+                       </div>
+                       <div class="friend-ago">5min</div>
+                   </div>
+               </li>
+           </ul>
+       </div>
+   </div>
+   <div class="user-chat-container">
+       <div class="user-chat-header col-md-12">
+           <div>
+               <span>Matth Thompson is typing...</span>
+           </div>
+           <div>
+               <i class="fa fa-star fa-lg"></i>
+           </div>
+           <div>
+               <i class="fa fa-phone fa-lg"></i>
+           </div>
+           <div>
+               <i class="fa fa-video-camera fa-lg"></i>
+           </div>
+       </div>
+       <div class="user-chat-body col-md-12">
+           <ul>
+               <li>
+                   <div class="left-user">
+                       <div class="left-user-image">
+                           <img src="../assets/images/background.jpg">
+                       </div>
+                       <div class="left-user-message">
+                           <span> asdasdasdasdasdasd</span>
+
+                       </div>
+                   </div>
+               </li>
+               <li>
+                   <div class="left-user">
+                       <div class="left-user-image">
+                           <img src="../assets/images/background.jpg">
+                       </div>
+                       <div class="left-user-message">
+                           asdasdasdasdasdasdasdaaaaaaaaaaaaaassdasdasda
+                           sadasdssssssssssssssssssssssssssssssssssssss
+                       </div>
+                   </div>
+               </li>
+           </ul>
+
+       </div>
+       <div class="user-chat-footer col-md-12">
+           <div>
+
+               <i class="fa fa-paperclip fa-lg"></i>
+
+           </div>
+           <div class="chat-area">
+               <textarea rows="2" class="form-control" placeholder="Type your message"></textarea>
+           </div>
+           <div class="chat-action">
+               <i class="fa fa-smile-o fa-lg"></i>
+           </div>
+           <div>
+               <i class="fa fa-paper-plane fa-lg"></i>
+           </div>
+       </div>
+   </div>
+    <div class="user-profile-container">
+        <div class="user-profile-header">
+            <i class="fa fa-bell fa-lg"></i>
+
+        </div>
+        <div class="user-profile-image">
             <img src="../assets/images/background.jpg">
-            <span style="font-size: 18px;font-weight: 900"  id="current_user" data-user_id="{{ Auth::user()->id }}" data-user_name="{{ Auth()->user()->name }}">{{ Auth::user()->name }}</span>
+            <div class="user-profile-name">Matt Thompson</div>
+            <div class="user-profile-address">USA</div>
         </div>
-        <div class="chat-body col-md-12">
+        <div class="user-profile-data">
             <ul>
-<!--                <li class="left-user">-->
-<!--                    <img src="../assets/images/background.jpg">-->
-<!--                    <span>{{ Auth()->user()->name }}</span>-->
-<!--                    <div></div>-->
-<!--                </li>-->
-<!--                <li class="right-user" style="text-align: right">-->
-<!--                   asdasd-->
-<!--                </li>-->
+                <li>Nickname: <span>Polds</span></li>
+                <li>Tel:<span>11111</span></li>
+                <li>Date of Birth:<span>July 22,1995</span></li>
+                <li>Language <span>Taglish</span></li>
             </ul>
         </div>
-
-        <div class="chat-input-container">
-            <div class="col-md-12 chat-input">
-                <div class="col-md-10" >
-                    <div class="row">
-                        <textarea class="form-control chat-area" placeholder="Enter Message.." rows="3"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <input type="button" class="btn btn-primary btn-lg send-chat" value="Send">
-                </div>
-            </div>
-
-        </div>
     </div>
-
-    <div class="friend-list-container">
-        <div class="row">
-            <div class="search col-md-8">
-                <input id="search_user_list" class="form-control" type="text" placeholder="Enter name">
-            </div>
-            <div class="col-md-4">
-                <input type="submit" id="search-btn" value="Search Friend" class="btn btn-primary" style="margin: 10px">
-            </div>
-        </div>
-        <div class="search-list col-md-12">
-            <ul class="user-friend-list">
-<!--                <li>-->
-<!--                    <div class="search-card-data">-->
-<!--                        <img>-->
-<!--                        <span>Name</span>-->
-<!--                        <input type="submit" value="+" class="btn btn-primary">-->
-<!--                    </div>-->
-<!--                </li>-->
-
-            </ul>
-        </div>
-
-
-    </div>
-
 </div>
 
 
@@ -313,6 +450,10 @@
     $(document).ready(function(){
         var BASEURL = $('#baseURL').val();
         $('.active-list').mCustomScrollbar();
+
+        $('.friend-list').mCustomScrollbar();
+
+//        loadFriendList();
 
         loadSearchList();
         $('.user-friend-list').hide();
@@ -360,7 +501,7 @@
 
         });
 
-        loadActive();
+      //  loadActive();
 
 
 
@@ -425,6 +566,22 @@
         });
     }
 
+    function loadFriendList(){
+
+        var BASEURL = $('#baseURL').val();
+        $.ajax({
+            url: BASEURL + '/getFriendList',
+            type: 'post',
+            data:{
+                '_token': $('meta[name="csrf_token"]').attr('content')
+            },
+            success:function(data){
+                $('.active-list').html(data)
+            }
+        });
+
+    }
+
 //    function loadSearchList(){
 //        var BASEURL = $('#baseURL').val();
 //        $.ajax({
@@ -455,6 +612,7 @@
             }
         });
     }
+
 
 
 </script>

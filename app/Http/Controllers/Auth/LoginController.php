@@ -43,14 +43,10 @@ class LoginController extends Controller
     }
 
     public function submitlogin(){
-
         $user = Input::get('username');
         $password = Input::get('password');
 
         if(Auth::attempt(['email'=>$user,'password'=>$password])){
-            $id  = Auth::user()->id;
-
-            DB::table('users')->where('id',$id)->update(['status'=>1]);
 
             return Redirect::to('/chat');
         }else{

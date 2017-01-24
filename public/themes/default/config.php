@@ -63,6 +63,7 @@ return array(
             $theme->asset()->add('socket','https://cdn.socket.io/socket.io-1.3.4.js');
             $theme->asset()->add('scroll-js', 'assets/js/jquery.mCustomScrollbar.concat.min.js');
             $theme->asset()->add('scroll-css', 'assets/css/jquery.mCustomScrollbar.css');
+            $theme->asset()->add('font-awesome', 'assets/font-awesome/css/font-awesome.min.css');
 
             // You may use this event to set up your assets.
             // $theme->asset()->usePath()->add('core', 'core.js');

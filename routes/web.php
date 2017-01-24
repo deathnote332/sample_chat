@@ -32,8 +32,9 @@ Route::group(['middleware'=>['auth']],function(){
     Route::match(array('GET','POST'),'insertUser',   'HomeController@insertUser');
     Route::match(array('GET','POST'),'activeUser',   'HomeController@activeUser');
     Route::match(array('GET','POST'),'getChat',   'HomeController@getChat');
-    Route::match(array('GET','POST'),'getFriendList',   'HomeController@getFriendList');
-    Route::match(array('POST'),'searchUser',   'HomeController@searchUser');
+    Route::match(array('POST'),'getFriendList',   'HomeController@getFriendList');
+    Route::match(array('GET','POST'),'searchUser',   'HomeController@searchUser');
+    Route::match(array('GET','POST'),'sendFriendRequest',   'HomeController@sendFriendRequest');
 
 
 });
