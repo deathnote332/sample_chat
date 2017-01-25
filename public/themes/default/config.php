@@ -65,6 +65,11 @@ return array(
             $theme->asset()->add('scroll-css', 'assets/css/jquery.mCustomScrollbar.css');
             $theme->asset()->add('font-awesome', 'assets/font-awesome/css/font-awesome.min.css');
 
+            $theme->asset()->add('emojify.js', 'assets/js/emojify.js');
+            $theme->asset()->add('emojify.css', 'assets/css/emojify.css');
+
+
+
             // You may use this event to set up your assets.
             // $theme->asset()->usePath()->add('core', 'core.js');
             // $theme->asset()->add('jquery', 'vendor/jquery/jquery.min.js');

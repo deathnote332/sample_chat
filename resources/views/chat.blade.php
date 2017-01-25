@@ -6,7 +6,7 @@
     .chat-container{
         position: relative;
     }
-        .inbox-container,.friend-list-container,.user-chat-container,.user-profile-container{
+        .inbox-container,.chat-list-container,.user-chat-container,.user-profile-container{
             position: relative;
             height: 100%;
             display: block;
@@ -52,11 +52,11 @@
                 }
 
 
-        .friend-list-container{
+        .chat-list-container{
             width: 25%;
             background-color: #242a31;
         }
-            .search-friend{
+            .search-chat{
                 padding: 20px 30px;
                 border-bottom: 1px solid #363d45;
             }
@@ -82,20 +82,20 @@
                         -webkit-box-shadow: none;
                         box-shadow: none;
                     }
-            .friend-list{
+            .chat-list{
                 height: 86%;
                 margin: 0px;
                 padding: 0px 10px;
             }
-            .friend-list ul{
+            .chat-list ul{
                 padding: 0px;
                 margin-top: 5px;
             }
-                .friend-list ul li{
+                .chat-list ul li{
                     list-style-type: none;
                     width: 100%;
                     padding: 10px;
-                    margin-bottom: 5px;
+                    margin-bottom: 10px;
                     color:white;
                     background: #1d232a;
                     position: relative;
@@ -104,7 +104,7 @@
                     .friend-image{
                         width: 30%;
                     }
-                    .friend-list ul li img{
+                    .chat-list ul li img{
                         height: 60px;
                         width: 60px;
                         border-radius: 50%;
@@ -133,7 +133,22 @@
                             font-size: 11px;
                             top: -15px;
                         }
-
+                    .active:after,.not-active:after{
+                        content: '';
+                        position: absolute;
+                        height: 10px;
+                        width: 10px;
+                        right: 15px;
+                        top: 10px;
+                        position: absolute;
+                        border-radius: 50%;
+                    }
+                    .active:after{
+                        background-color: green;
+                    }
+                    .not-active:after{
+                        background-color: red;
+                    }
 
 
         .user-chat-container{
@@ -186,38 +201,77 @@
             }
             .user-chat-body ul li{
                 list-style-type: none;
-                margin-bottom: 5px;
+                margin-bottom: 10px;
             }
-                .left-user{
+                .left-user,.right-user{
                     display: block;
                 }
-                
-                .left-user div{
+
+
+                .left-user div,.right-user div{
                     display: inline-block;
                     vertical-align: top;
                 }
+                .right-user{
+                    direction: rtl;
+                    text-align: right;
+                }
 
-                .left-user-image{
+                .right-user .user-message{
+                   background-color: #0083fe;
+                    color:white;
+                }
+
+                .left-user{
+                    padding-right: 60px;
+                }
+
+                .user-image{
                     padding: 10px;
                 }
-                .left-user-image img{
+                .user-image img{
                     height: 40px;
                     width: 40px;
                     border-radius: 50%;
                 }
 
-                .left-user-message{
+                .user-message{
                     padding: 10px;
                     background-color: white;
-                    width: 85%;
+                    max-width: 85%;
+                    border-radius: 5px;
                     position: relative;
                     top: 10px;
 
                 }
-                .left-user-message span{
-                    word-wrap: break-word;
+
+                .left-triange:after,.right-triangle:after{
+                    content: "";
+                    position: absolute;
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+
                 }
 
+                .left-triange:after{
+                    border-right: 10px solid white;
+                    left: -10px;
+                    top: 13px;
+                    width: 0;
+                    height: 0;
+                }
+
+                .right-triangle:after{
+                    border-left: 10px solid #0083fe;
+                    right: -10px;
+                    top: 13px;
+                    width: 0;
+                    height: 0;
+                }
+
+                .user-message span{
+                    word-wrap: break-word;
+                }
 
             .user-chat-footer{
                 position: absolute;
@@ -237,9 +291,10 @@
                         position: relative;
                         top: -15px;
                     }
-                    .user-chat-footer div img{
-                        width: 30px;
-                        height: 30px;
+
+                    .user-chat-footer div i:hover{
+                        color: #0083fe;
+                        cursor: pointer;
                     }
                     .chat-area{
                         width: 65%;
@@ -312,11 +367,11 @@
 
 
     .mCSB_inside > .mCSB_container {
-        margin-right: 20px;
+        margin-right: 0px;
     }
 
 </style>
-
+<input type="hidden" id="current_user" value="{{ Auth::user()->id }}">
 <div class="chat-container">
    <div class="inbox-container">
        <div class="inbox-header cold-md-12">
@@ -337,30 +392,33 @@
                    <span>Important</span>
                    <span>6</span>
                </li>
+               <li>
+                   <span>Request</span>
+                   <span>6</span>
+               </li>
            </ul>
        </div>
    </div>
-   <div class="friend-list-container">
-       <div class="search-friend col-md-12">
+   <div class="chat-list-container">
+       <div class="search-chat col-md-12">
             <div class="search-border">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" id="chat-search" placeholder="Search">
             </div>
        </div>
-       <div class="friend-list col-md-12">
-           <ul class="friend-list-data">
-
-               <li class="friend-profile">
-                   <div class="friend-image">
-                       <img src="../assets/images/background.jpg">
-                   </div>
-                   <div class="friend-data">
-                       <span>Matt Thompson</span>
-                       <div class="friend-message">
-                           <span>Thanks again you have been..</span>
-                       </div>
-                       <div class="friend-ago">5min</div>
-                   </div>
-               </li>
+       <div class="chat-list col-md-12">
+           <ul class="chat-list-data">
+<!--               <li class="friend-profile  not-active">-->
+<!--                   <div class="friend-image">-->
+<!--                       <img src="../assets/images/background.jpg">-->
+<!--                   </div>-->
+<!--                   <div class="friend-data">-->
+<!--                       <span>Paul Thompson</span>-->
+<!--                       <div class="friend-message">-->
+<!--                           <span>Thanks again you have been..</span>-->
+<!--                       </div>-->
+<!--                       <div class="friend-ago">5min</div>-->
+<!--                   </div>-->
+<!--               </li>-->
            </ul>
        </div>
    </div>
@@ -381,39 +439,37 @@
        </div>
        <div class="user-chat-body col-md-12">
            <ul>
-               <li>
-                   <div class="left-user">
-                       <div class="left-user-image">
-                           <img src="../assets/images/background.jpg">
-                       </div>
-                       <div class="left-user-message">
-                           <span> asdasdasdasdasdasd</span>
-
-                       </div>
-                   </div>
-               </li>
-               <li>
-                   <div class="left-user">
-                       <div class="left-user-image">
-                           <img src="../assets/images/background.jpg">
-                       </div>
-                       <div class="left-user-message">
-                           asdasdasdasdasdasdasdaaaaaaaaaaaaaassdasdasda
-                           sadasdssssssssssssssssssssssssssssssssssssss
-                       </div>
-                   </div>
-               </li>
+<!--               <li>-->
+<!--                   <div class="left-user">-->
+<!--                       <div class="user-image">-->
+<!--                           <img src="../assets/images/background.jpg">-->
+<!--                       </div>-->
+<!--                       <div class="user-message left-triange">-->
+<!--                           <span> asdasdasdasdasdasd</span>-->
+<!---->
+<!--                       </div>-->
+<!--                   </div>-->
+<!--               </li>-->
+<!---->
+<!--               <li>-->
+<!--                   <div class="right-user">-->
+<!--                       <div class="user-image">-->
+<!--                           <img src="../assets/images/background.jpg">-->
+<!--                       </div>-->
+<!--                       <div class="user-message right-triangle">-->
+<!--                           <span> asdasdasdasdasdasd</span>-->
+<!--                       </div>-->
+<!--                   </div>-->
+<!--               </li>-->
            </ul>
 
        </div>
        <div class="user-chat-footer col-md-12">
            <div>
-
                <i class="fa fa-paperclip fa-lg"></i>
-
            </div>
            <div class="chat-area">
-               <textarea rows="2" class="form-control" placeholder="Type your message"></textarea>
+               <textarea id="chat_area" rows="2" class="form-control" placeholder="Type your message"></textarea>
            </div>
            <div class="chat-action">
                <i class="fa fa-smile-o fa-lg"></i>
@@ -443,31 +499,41 @@
         </div>
     </div>
 </div>
-
+<div id="emojiContainer"></div>
 
 <script>
     var socket = io.connect('192.168.1.193:8891');
     $(document).ready(function(){
         var BASEURL = $('#baseURL').val();
-        $('.active-list').mCustomScrollbar();
 
+        $('.active-list').mCustomScrollbar();
         $('.friend-list').mCustomScrollbar();
 
-//        loadFriendList();
+        loadChatList();
 
-        loadSearchList();
+
+        runEmoji()
+
         $('.user-friend-list').hide();
 
-        $('#search_user').on('keyup',function(){
+        $('#chat-search').on('keyup',function(){
 
-            var that = this, $allListElements = $('.active-list > li');
-            var $matchingListElements = $allListElements.filter(function(i, li){
-                var listItemText = $(li).text().toUpperCase(),
-                    searchText = that.value.toUpperCase();
-                return ~listItemText.indexOf(searchText);
+//            var that = this, $allListElements = $('.friend-list-data > li');
+//            var $matchingListElements = $allListElements.filter(function(i, li){
+//                var listItemText = $(li).text().toUpperCase(),
+//                    searchText = that.value.toUpperCase();
+//                return ~listItemText.indexOf(searchText);
+//            });
+//            $allListElements.hide();
+
+//            $matchingListElements.show();
+            var g = $(this).val().toLowerCase();
+
+            $('.friend-data').each(function() {
+                var s = $(this).children('span').text().toLowerCase();
+                $(this).closest('.friend-profile')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
             });
-            $allListElements.hide();
-            $matchingListElements.show();
+
         });
 
 
@@ -479,43 +545,15 @@
             }
         });
 
-        $('#search-btn').on('click',function(){
-
-            if($('#search_user_list').val()!=null && $('#search_user_list').val()!=''){
-
-                var that = $('#search_user_list')[0], $allListElements = $('.user-friend-list > li');
-                var $matchingListElements = $allListElements.filter(function(i, li){
-                    var listItemText = $(li).text().toUpperCase(),
-                        searchText = that.value.toUpperCase();
-                    return ~listItemText.indexOf(searchText);
-
-                });
-
-                $allListElements.hide();
-                $matchingListElements.show();
-                $('.user-friend-list').show();
-            }else{
-
-                $('.user-friend-list').hide();
-            }
-
-        });
-
-      //  loadActive();
-
-
-
-        $('body').delegate('.card-board','click',function(){
-            $('.current-user span').text($(this).children('.card-content').children('.user-name').text())
-            //load chat data
-        })
 
         socket.emit('current-user',{ user_active: true });
+        runEmoji()
 
-        $('.send-chat').on('click',function(){
-            var input =  $('.chat-area').val();
+        $('.fa-paper-plane').on('click',function(){
+
+            var input =  $('#chat_area').val();
             if(input!=''){
-                socket.emit('chat message',{user_id:$('#current_user').data('user_id'),msg:$('.chat-area').val(),user_name:$('#current_user').data('user_name')});
+                socket.emit('chat message',{user_id:$('#current_user').val(),msg:input});
                 $('.chat-area').val('');
                 return false;
             }else{
@@ -525,45 +563,71 @@
 
         socket.on('chat message', function(data){
 
-            if(data.user_id==$('#current_user').data('user_id')){
-                $('.chat-body ul').append($('<li class="right-user">').text(data.msg));
-                $(".chat-body").mCustomScrollbar({
+
+
+            if(data.user_id==2){
+
+                $('.user-chat-body ul').append($('<li>' +
+                    '<div class="right-user">' +
+                        '<div class="user-image">' +
+                            '<img src="../assets/images/background.jpg">' +
+                        '</div>' +
+                        '<div class="user-message right-triangle">'+ data.msg +
+
+                        '</div>' +
+                    '</div>' +
+                '</li>'))
+
+
+                $(".user-chat-body").mCustomScrollbar({
                     //your options...
                 }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
 
             }else{
-                $('.chat-body ul').append($('<li><img src="../assets/images/background.jpg"><span>'+data.user_name+'</span><div>'+ data.msg +'</div></li>'));
-                $(".chat-body").mCustomScrollbar({
+
+                $('.user-chat-body ul').append($('<li>' +
+                    '<div class="left-user">' +
+                        '<div class="user-image">' +
+                            '<img src="../assets/images/background.jpg">' +
+                        '</div>' +
+                        '<div class="user-message left-triange">' +  data.msg +
+
+                        '</div>' +
+                    '</div>' +
+                '</li>'))
+                $(".user-chat-body").mCustomScrollbar({
                     //your options...
                 }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
-
+                runEmoji();
             }
-
         });
 
         socket.on('current-user',function(data){
-         if(data.user_active){
-             loadActive();
-         }
+
         });
 
 
 
     });
 
-    function loadActive(){
-        var BASEURL = $('#baseURL').val();
-        $.ajax({
-            url: BASEURL + '/getChat',
-            type: 'get',
-            data:{
-                '_token': $('meta[name="csrf_token"]').attr('content')
-            },
-            success:function(data){
-                $('.active-list').html(data)
 
+    function runEmoji(){
+        var BASEURL = $('#baseURL').val();
+        emojify.setConfig({
+
+            emojify_tag_type : 'div',           // Only run emojify.js on this element
+            only_crawl_id    : null,            // Use to restrict where emojify.js applies
+            img_dir          : BASEURL+'/assets/emoji',  // Directory for emoji images
+            ignored_tags     : {                // Ignore the following tags
+                'SCRIPT'  : 1,
+                'TEXTAREA': 1,
+                'A'       : 1,
+                'PRE'     : 1,
+                'CODE'    : 1
             }
         });
+
+        emojify.run();
     }
 
     function loadFriendList(){
@@ -597,17 +661,17 @@
 //        });
 //    }
 
-    function loadSearchList(){
+    function loadChatList(){
         var BASEURL = $('#baseURL').val();
         $.ajax({
-            url: BASEURL + '/searchUser',
+            url: BASEURL + '/ChatList',
             type: 'post',
             data:{
-                '_token': $('meta[name="csrf_token"]').attr('content'),
+                '_token': $('meta[name="csrf_token"]').attr('content')
 
             },
             success:function(data){
-                $('.user-friend-list').html(data)
+                $('.chat-list-data').html(data)
 
             }
         });
