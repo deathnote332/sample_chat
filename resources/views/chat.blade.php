@@ -193,6 +193,7 @@
                     }
             .user-chat-body{
                 height: 75%;
+                padding-right: 0px !important;
 
             }
             .user-chat-body ul{
@@ -214,12 +215,15 @@
                 }
                 .right-user{
                     direction: rtl;
-                    text-align: right;
+                    display: flex;
+                    flex-direction: row;
+                    padding-left: 50px;
                 }
 
                 .right-user .user-message{
                    background-color: #0083fe;
                     color:white;
+                    direction: rtl;
                 }
 
                 .left-user{
@@ -438,7 +442,7 @@
            </div>
        </div>
        <div class="user-chat-body col-md-12">
-           <ul>
+<!--           <ul class="friend-messages">-->
 <!--               <li>-->
 <!--                   <div class="left-user">-->
 <!--                       <div class="user-image">-->
@@ -461,7 +465,8 @@
 <!--                       </div>-->
 <!--                   </div>-->
 <!--               </li>-->
-           </ul>
+
+<!--           </ul>-->
 
        </div>
        <div class="user-chat-footer col-md-12">
@@ -537,14 +542,10 @@
         });
 
 
-        $('#search_user_list').on('keyup',function(){
-
-            if($(this).val()==null && $(this).val()==''){
-                $('.user-friend-list').hide();
-                alert(this)
-            }
-        });
-
+        $('body').on('click','.friend-profile',function(){
+            var id = $(this).data('chat_room');
+            loadFriendMessages(id);
+        })
 
         socket.emit('current-user',{ user_active: true });
         runEmoji()
@@ -555,6 +556,8 @@
             if(input!=''){
                 socket.emit('chat message',{user_id:$('#current_user').val(),msg:input});
                 $('.chat-area').val('');
+                var chat_room_id = $('.friend-messages').data('chat_room_id');
+                saveMessage(chat_room_id,input,$('#current_user').val());
                 return false;
             }else{
                 return false;
@@ -563,9 +566,7 @@
 
         socket.on('chat message', function(data){
 
-
-
-            if(data.user_id==2){
+            if(data.user_id==$('#current_user').val()){
 
                 $('.user-chat-body ul').append($('<li>' +
                     '<div class="right-user">' +
@@ -582,7 +583,7 @@
                 $(".user-chat-body").mCustomScrollbar({
                     //your options...
                 }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
-
+                runEmoji();
             }else{
 
                 $('.user-chat-body ul').append($('<li>' +
@@ -630,36 +631,46 @@
         emojify.run();
     }
 
-    function loadFriendList(){
+
+    function loadFriendMessages(id){
 
         var BASEURL = $('#baseURL').val();
         $.ajax({
-            url: BASEURL + '/getFriendList',
+            url: BASEURL + '/getFriendMessage',
             type: 'post',
             data:{
+                'user_id' : id,
                 '_token': $('meta[name="csrf_token"]').attr('content')
+
             },
             success:function(data){
-                $('.active-list').html(data)
+                $('.user-chat-body').html(data)
+                $(".user-chat-body").mCustomScrollbar({
+                    //your options...
+                }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
+                runEmoji();
             }
         });
-
     }
 
-//    function loadSearchList(){
-//        var BASEURL = $('#baseURL').val();
-//        $.ajax({
-//            url: BASEURL + '/getFriendList',
-//            type: 'get',
-//            data:{
-//                '_token': $('meta[name="csrf_token"]').attr('content')
-//            },
-//            success:function(data){
-//                $('.user-friend-list').html(data)
-//
-//            }
-//        });
-//    }
+
+    function saveMessage(chat_room_id,message,_from){
+        var BASEURL = $('#baseURL').val();
+        $.ajax({
+            url: BASEURL + '/saveMessage',
+            type: 'post',
+            data:{
+                chat_room_id: chat_room_id,
+                message: message,
+                _from: _from,
+                '_token': $('meta[name="csrf_token"]').attr('content')
+
+            },
+            success:function(data){
+
+            }
+        });
+    }
 
     function loadChatList(){
         var BASEURL = $('#baseURL').val();
