@@ -40,6 +40,11 @@ Route::group(['middleware'=>['auth']],function(){
     Route::match(array('POST'),'getFriendMessage',   'ChatController@getFriendMessage');
     Route::match(array('POST'),'saveMessage',   'ChatController@saveMessage');
 
+    Route::match(array('get'),'getSum',   'ChatController@getSum');
+    Route::match(array('get'),'getFriendsUser',   'ChatController@getFriendsUser');
+
+
+
 
 });
 

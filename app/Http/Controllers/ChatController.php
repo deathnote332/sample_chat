@@ -15,6 +15,7 @@ class ChatController extends Controller
     public function ChatList(){
         $chatList = DB::table('chat_rooms')
             ->where('user_id',Auth::user()->id)
+            ->orWhere('others_id',Auth::user()->id)
             ->get();
         $data = ['chatList'=>$chatList];
         $theme = Theme::uses('default')->layout('default')->setTitle('Homepage');
@@ -25,8 +26,9 @@ class ChatController extends Controller
     public function  getFriendMessage(){
 
         $id = Input::get('user_id');
+
         $getMessage = DB::table('chat_room_data')
-            ->where('chat_room',$id)
+            ->where('chat_room_id',$id)
             ->get();
 
         $data = ['getMessage'=>$getMessage,'chat_room_id'=>$id];
@@ -53,16 +55,59 @@ class ChatController extends Controller
             2592000 => 'month',
             604800 => 'week',
             86400 => 'day',
-            3600 => 'hour',
-            60 => 'minute',
-            1 => 'second'
+            3600 => 'hr',
+            60 => 'min',
+            1 => 'sec'
         );
 
         foreach ($tokens as $unit => $text) {
             if ($time < $unit) continue;
             $numberOfUnits = floor($time / $unit);
-            return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+            return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'').' ago';
         }
 
     }
+
+
+
+    public function getFriendsUser(){
+        $users = DB::table('chat_rooms')
+                    ->get();
+        $data = array();
+        foreach($users as $key=>$val){
+            if($val->chat_type==1){
+                foreach(json_decode($val->users) as $key=>$id){
+                    if(Auth::user()->id != $id->id){
+                        array_push($data,['users'=>$id->id,'chat_room_id'=>$val->id,'chat_type'=>$val->chat_type]);
+                    }
+                }
+            }else{
+                array_push($data,['users'=>json_decode($val->users),'chat_room_id'=>$val->id,'chat_type'=>$val->chat_type]);
+            }
+        }
+
+        $data1 = ['chatList'=>$data];
+
+        $theme = Theme::uses('default')->layout('default')->setTitle('Homepage');
+        return $theme->of('chat-list',$data1)->render();
+    }
+
+    //create a function that will sum number from 1 to N
+    public function getSum(){
+        $num = 1;
+        $total = 0;
+
+
+    for($i=0;$i<=$num;$i++){
+        $total = $total+$i;
+    }
+//
+
+        return $total;
+
+
+//        return (1+$num)*$num/2;
+
+    }
+    //without loop
 }

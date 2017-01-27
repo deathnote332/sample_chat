@@ -97,18 +97,28 @@
                     padding: 10px;
                     margin-bottom: 10px;
                     color:white;
-                    background: #1d232a;
+                    background: #343c45;
                     position: relative;
-                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    cursor: pointer;
+
+                }
+                .chat-list ul li:hover{
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+                }
+
+                .click-active{
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
                 }
                     .friend-image{
                         width: 30%;
+
                     }
-                    .chat-list ul li img{
+                    .friend-image img{
                         height: 60px;
                         width: 60px;
                         border-radius: 50%;
                     }
+
                     .friend-data{
                         position: absolute;
                         right: 0px;
@@ -123,15 +133,17 @@
                             position: relative;
                             padding-top: 5px;
                             font-size: 11px;
-                            width: 80%;
+                            width: 60%;
                         }
                         .friend-ago{
                             position: relative;
-                            width: 20%;
+                            width: 40%;
                             right: 0px;
                             float: right;
                             font-size: 11px;
                             top: -15px;
+                            text-align: right;
+                            padding-right: 15px;
                         }
                     .active:after,.not-active:after{
                         content: '';
@@ -214,16 +226,12 @@
                     vertical-align: top;
                 }
                 .right-user{
-                    direction: rtl;
-                    display: flex;
-                    flex-direction: row;
-                    padding-left: 50px;
+                    text-align: right;
                 }
 
                 .right-user .user-message{
                    background-color: #0083fe;
                     color:white;
-                    direction: rtl;
                 }
 
                 .left-user{
@@ -246,7 +254,8 @@
                     border-radius: 5px;
                     position: relative;
                     top: 10px;
-
+                    text-align: justify;
+                    word-wrap: break-word;
                 }
 
                 .left-triange:after,.right-triangle:after{
@@ -515,8 +524,6 @@
         $('.friend-list').mCustomScrollbar();
 
         loadChatList();
-
-
         runEmoji()
 
         $('.user-friend-list').hide();
@@ -543,20 +550,28 @@
 
 
         $('body').on('click','.friend-profile',function(){
+
+            $('.chat-list-data').find('li').removeClass('click-active');
+            $('.chat-list-data').find('li').prop('disabled',false);
+
+            $(this).addClass('click-active');
+            $(this).prop('disabled',true);
             var id = $(this).data('chat_room');
             loadFriendMessages(id);
         })
 
         socket.emit('current-user',{ user_active: true });
-        runEmoji()
+
 
         $('.fa-paper-plane').on('click',function(){
 
             var input =  $('#chat_area').val();
             if(input!=''){
-                socket.emit('chat message',{user_id:$('#current_user').val(),msg:input});
-                $('.chat-area').val('');
                 var chat_room_id = $('.friend-messages').data('chat_room_id');
+
+                socket.emit('chat message',{user_id:$('#current_user').val(),msg:input,chat_room_id:chat_room_id});
+                $('.chat-area').val('');
+
                 saveMessage(chat_room_id,input,$('#current_user').val());
                 return false;
             }else{
@@ -565,41 +580,41 @@
         });
 
         socket.on('chat message', function(data){
+            if(data.chat_room_id==$('.friend-messages').data('chat_room_id')){
+                if(data.user_id==$('#current_user').val()){
 
-            if(data.user_id==$('#current_user').val()){
-
-                $('.user-chat-body ul').append($('<li>' +
-                    '<div class="right-user">' +
-                        '<div class="user-image">' +
-                            '<img src="../assets/images/background.jpg">' +
-                        '</div>' +
+                    $('.user-chat-body ul').append($('<li>' +
+                        '<div class="right-user">' +
                         '<div class="user-message right-triangle">'+ data.msg +
-
                         '</div>' +
-                    '</div>' +
-                '</li>'))
-
-
-                $(".user-chat-body").mCustomScrollbar({
-                    //your options...
-                }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
-                runEmoji();
-            }else{
-
-                $('.user-chat-body ul').append($('<li>' +
-                    '<div class="left-user">' +
                         '<div class="user-image">' +
-                            '<img src="../assets/images/background.jpg">' +
+                        '<img src="../assets/images/background.jpg">' +
+                        '</div>' +
+                        '</div>' +
+                        '</li>'))
+
+
+                    $(".user-chat-body").mCustomScrollbar({
+                        //your options...
+                    }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
+                    runEmoji();
+                }else{
+
+                    $('.user-chat-body ul').append($('<li>' +
+                        '<div class="left-user">' +
+                        '<div class="user-image">' +
+                        '<img src="../assets/images/background.jpg">' +
                         '</div>' +
                         '<div class="user-message left-triange">' +  data.msg +
 
                         '</div>' +
-                    '</div>' +
-                '</li>'))
-                $(".user-chat-body").mCustomScrollbar({
-                    //your options...
-                }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
-                runEmoji();
+                        '</div>' +
+                        '</li>'))
+                    $(".user-chat-body").mCustomScrollbar({
+                        //your options...
+                    }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
+                    runEmoji();
+                }
             }
         });
 
@@ -612,24 +627,7 @@
     });
 
 
-    function runEmoji(){
-        var BASEURL = $('#baseURL').val();
-        emojify.setConfig({
 
-            emojify_tag_type : 'div',           // Only run emojify.js on this element
-            only_crawl_id    : null,            // Use to restrict where emojify.js applies
-            img_dir          : BASEURL+'/assets/emoji',  // Directory for emoji images
-            ignored_tags     : {                // Ignore the following tags
-                'SCRIPT'  : 1,
-                'TEXTAREA': 1,
-                'A'       : 1,
-                'PRE'     : 1,
-                'CODE'    : 1
-            }
-        });
-
-        emojify.run();
-    }
 
 
     function loadFriendMessages(id){
@@ -645,10 +643,13 @@
             },
             success:function(data){
                 $('.user-chat-body').html(data)
+                var BASEURL = $('#baseURL').val();
                 $(".user-chat-body").mCustomScrollbar({
                     //your options...
                 }).mCustomScrollbar("scrollTo","bottom",{scrollInertia:0});
+
                 runEmoji();
+
             }
         });
     }
@@ -673,10 +674,11 @@
     }
 
     function loadChatList(){
+
         var BASEURL = $('#baseURL').val();
         $.ajax({
-            url: BASEURL + '/ChatList',
-            type: 'post',
+            url: BASEURL + '/getFriendsUser',
+            type: 'get',
             data:{
                 '_token': $('meta[name="csrf_token"]').attr('content')
 
@@ -684,10 +686,42 @@
             success:function(data){
                 $('.chat-list-data').html(data)
 
+                $('.friend-message span').each(function(){
+
+                    var text = $(this).text(); // get default text
+                    var ExactLength = 20;     // exact length of text
+
+                    var trimmedString = text.length > ExactLength ? // trimmed text if greater thant exact length
+                        text.substring(0,ExactLength) +
+                            "..." : text;
+                    $(this).text(trimmedString);
+                    })
+
+                runEmoji();
+
             }
         });
     }
 
 
+    function runEmoji(){
+        var BASEURL = $('#baseURL').val();
+
+        emojify.setConfig({
+
+            emojify_tag_type : 'div',           // Only run emojify.js on this element
+            only_crawl_id    : null,            // Use to restrict where emojify.js applies
+            img_dir          : BASEURL+'/assets/emoji',  // Directory for emoji images
+            ignored_tags     : {                // Ignore the following tags
+                'SCRIPT'  : 1,
+                'TEXTAREA': 1,
+                'A'       : 1,
+                'PRE'     : 1,
+                'CODE'    : 1
+            }
+        });
+
+        emojify.run();
+    }
 
 </script>
