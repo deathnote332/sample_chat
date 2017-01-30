@@ -18,6 +18,8 @@
 Route::match(array('GET','POST'),'submitlogin',   'Auth\LoginController@submitlogin');
 Route::match(array('GET','POST'),'logout',   'Auth\LoginController@logout');
 
+Route::match(array('GET','POST'),'profile',   'HomeController@profile');
+
 
 Route::match(array('GET','POST'),'/',   'HomeController@home');
 

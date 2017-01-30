@@ -16,6 +16,8 @@
            <div class="user-message <?php echo $val->_from == Auth::user()->id ? 'right-triangle':'left-triange'; ?>">
                {{ $val->message }}
            </div>
+           <?php $user = \Illuminate\Foundation\Auth\User::find($val->_from) ?>
+           <div class="from"> {{ $user->name }} </div>
            @endif
        </div>
     </li>

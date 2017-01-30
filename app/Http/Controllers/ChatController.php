@@ -42,7 +42,7 @@ class ChatController extends Controller
         $_from = Input::get('_from');
 
         DB::table('chat_room_data')
-            ->insert(['chat_room'=>$chat_room_id,'message'=>$message,'_from'=>$_from]);
+            ->insert(['chat_room_id'=>$chat_room_id,'message'=>$message,'_from'=>$_from]);
     }
 
     public static function humanTiming ($time)
@@ -70,19 +70,22 @@ class ChatController extends Controller
 
 
 
+
     public function getFriendsUser(){
         $users = DB::table('chat_rooms')
                     ->get();
         $data = array();
         foreach($users as $key=>$val){
             if($val->chat_type==1){
-                foreach(json_decode($val->users) as $key=>$id){
-                    if(Auth::user()->id != $id->id){
-                        array_push($data,['users'=>$id->id,'chat_room_id'=>$val->id,'chat_type'=>$val->chat_type]);
-                    }
+                $chat_users = explode(',',$val->user_chat_id);
+                if(in_array("".Auth::user()->id,$chat_users)){
+                    array_push($data,['users'=>$chat_users,'chat_room_id'=>$val->id,'chat_type'=>$val->chat_type]);
                 }
             }else{
-                array_push($data,['users'=>json_decode($val->users),'chat_room_id'=>$val->id,'chat_type'=>$val->chat_type]);
+                $chat_users = explode(',',$val->user_chat_id);
+                if(in_array("".Auth::user()->id,$chat_users)){
+                    array_push($data,['users'=>$chat_users,'chat_room_id'=>$val->id,'chat_type'=>$val->chat_type]);
+                }
             }
         }
 
@@ -90,6 +93,8 @@ class ChatController extends Controller
 
         $theme = Theme::uses('default')->layout('default')->setTitle('Homepage');
         return $theme->of('chat-list',$data1)->render();
+
+        DB::table('chat_rooms')->insert(['user_chat_id'=>[1,2,3],'chat_type'=>1]);
     }
 
     //create a function that will sum number from 1 to N

@@ -137,6 +137,13 @@ class HomeController extends Controller
 
     }
 
+    public function profile(){
+
+
+        $theme = Theme::uses('default')->layout('default')->setTitle('Home');
+        return $theme->of('profile')->render();
+    }
+
 
 
 }

@@ -383,8 +383,24 @@
         margin-right: 0px;
     }
 
+    .from {
+        position: relative;
+
+        float: left;
+        left: 37px;
+        top: 50px;
+    }
+
+.to{
+    position: relative;
+
+    float: right;
+    right: 37px;
+    top: 50px;
+}
+
 </style>
-<input type="hidden" id="current_user" value="{{ Auth::user()->id }}">
+<input type="hidden" id="current_user" value="{{ Auth::user()->id }}" data-name="{{ Auth::user()->name }}">
 <div class="chat-container">
    <div class="inbox-container">
        <div class="inbox-header cold-md-12">
@@ -434,11 +450,12 @@
 <!--               </li>-->
            </ul>
        </div>
+
    </div>
    <div class="user-chat-container">
        <div class="user-chat-header col-md-12">
            <div>
-               <span>Matth Thompson is typing...</span>
+               <span class="header-name">Matth Thompson</span> <span>is typing...</span>
            </div>
            <div>
                <i class="fa fa-star fa-lg"></i>
@@ -451,31 +468,36 @@
            </div>
        </div>
        <div class="user-chat-body col-md-12">
-<!--           <ul class="friend-messages">-->
+           <ul class="friend-messages">
 <!--               <li>-->
-<!--                   <div class="left-user">-->
+<!--                   <div class="left-user .from">-->
 <!--                       <div class="user-image">-->
 <!--                           <img src="../assets/images/background.jpg">-->
 <!--                       </div>-->
+<!--                       <div class="from"> raf</div>-->
 <!--                       <div class="user-message left-triange">-->
-<!--                           <span> asdasdasdasdasdasd</span>-->
+<!--                          asdasdasdasdasdasd-->
 <!---->
 <!--                       </div>-->
+<!---->
 <!--                   </div>-->
 <!--               </li>-->
 <!---->
 <!--               <li>-->
 <!--                   <div class="right-user">-->
+<!---->
+<!--                       <div class="user-message right-triangle">-->
+<!--                       asdasdasdasdasdasd-->
+<!--                       </div>-->
 <!--                       <div class="user-image">-->
 <!--                           <img src="../assets/images/background.jpg">-->
 <!--                       </div>-->
-<!--                       <div class="user-message right-triangle">-->
-<!--                           <span> asdasdasdasdasdasd</span>-->
-<!--                       </div>-->
+<!--                       <div class="to"> raf</div>-->
 <!--                   </div>-->
 <!--               </li>-->
 
-<!--           </ul>-->
+
+           </ul>
 
        </div>
        <div class="user-chat-footer col-md-12">
@@ -553,7 +575,7 @@
 
             $('.chat-list-data').find('li').removeClass('click-active');
             $('.chat-list-data').find('li').prop('disabled',false);
-
+            $('.header-name').text($(this).children('.friend-data').children('span').text())
             $(this).addClass('click-active');
             $(this).prop('disabled',true);
             var id = $(this).data('chat_room');
@@ -569,7 +591,7 @@
             if(input!=''){
                 var chat_room_id = $('.friend-messages').data('chat_room_id');
 
-                socket.emit('chat message',{user_id:$('#current_user').val(),msg:input,chat_room_id:chat_room_id});
+                socket.emit('chat message',{user_id:$('#current_user').val(),user_name:$('#current_user').data('name'),msg:input,chat_room_id:chat_room_id});
                 $('.chat-area').val('');
 
                 saveMessage(chat_room_id,input,$('#current_user').val());
@@ -608,6 +630,7 @@
                         '<div class="user-message left-triange">' +  data.msg +
 
                         '</div>' +
+                        '<div class="from">'+ data.user_name +'</div>' +
                         '</div>' +
                         '</li>'))
                     $(".user-chat-body").mCustomScrollbar({

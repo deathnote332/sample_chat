@@ -67,6 +67,12 @@ return array(
 
             $theme->asset()->add('emojify.js', 'assets/js/emojify.js');
             $theme->asset()->add('emojify.css', 'assets/css/emojify.css');
+            $theme->asset()->add('animated-header.js', 'assets/js/animated-header.js');
+            $theme->asset()->add('animated-header.css', 'assets/css/animated-header.css');
+
+            $theme->asset()->add('poppins', 'https://fonts.googleapis.com/css?family=Poppins|Roboto');
+
+
 
 
 
