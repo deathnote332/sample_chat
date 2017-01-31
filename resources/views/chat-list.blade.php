@@ -16,7 +16,7 @@
                 <span>{{ $user->name }}</span>
                 <?php $getCurrentMessage = \Illuminate\Support\Facades\DB::table('chat_room_data')->where('chat_room_id',$list['chat_room_id'])->orderBy('updated_at','desc')->first(); ?>
                 <div class="friend-message">
-                    <span>{{ $getCurrentMessage->message }}</span>
+                    {{ $getCurrentMessage->message }}
                 </div>
                 <div class="friend-ago">{{ App\Http\Controllers\ChatController::humanTiming(strtotime($getCurrentMessage->updated_at)) }}</div>
             </div>

@@ -8,10 +8,10 @@ var io = require('socket.io')(server);
 //var redisClient = require('redis-connetion')();
 server.listen(8891);
 
-
-app.get('/', function(request, response) {
-    response.send('connected');
-});
+//
+//app.get('/', function(request, response) {
+//    response.send('connected');
+//});
 
 server.listen(process.env.PORT || 3000, function(){
     console.log('listening on', server.address().port);
@@ -22,7 +22,6 @@ server.listen(process.env.PORT || 3000, function(){
 io.on('connection', function (socket) {
 
     console.log("client connected");
-
 
     socket.on('current-user',function(e){
         io.emit('current-user',e) ;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -12,7 +13,7 @@ use Theme;
 
 class HomeController extends Controller
 {
-//    public function home(){
+//    public function home
 //
 //        $theme = Theme::uses('default')->layout('default')->setTitle('Homepage');
 //        return $theme->of('Home.home')->render();
@@ -20,7 +21,17 @@ class HomeController extends Controller
 
     public function chat(){
         if(Auth::check()){
-            $data = ['users' => User::all()];
+
+
+            $emoji = array();
+
+            $files = File::allfiles(public_path('assets\\emoji'));
+            foreach($files as $key => $file){
+                $filename = substr($file->getFilename(),0,strlen($file->getFilename())-4);
+                array_push($emoji,$filename);
+            }
+
+            $data = ['emoji' => $emoji];
 
             $theme = Theme::uses('default')->layout('default')->setTitle('Homepage');
             return $theme->of('chat',$data)->render();

@@ -398,6 +398,23 @@
     right: 37px;
     top: 50px;
 }
+.emojiContainer{
+    width: 250px;
+    height: 150px;
+    padding: 5px;
+    display: block;
+    border: solid 1px black;
+    position: absolute;
+    bottom: 55px;
+    right: 274px;
+    overflow: auto;
+    background: white;
+
+}
+.emojiContainer div{
+    display: inline-block;
+    padding: 2px;
+}
 
 </style>
 <input type="hidden" id="current_user" value="{{ Auth::user()->id }}" data-name="{{ Auth::user()->name }}">
@@ -506,14 +523,18 @@
            </div>
            <div class="chat-area">
                <textarea id="chat_area" rows="2" class="form-control" placeholder="Type your message"></textarea>
+
            </div>
            <div class="chat-action">
-               <i class="fa fa-smile-o fa-lg"></i>
+               <i class="fa fa-smile-o fa-lg" data-toggle="dropdown"></i>
            </div>
            <div>
                <i class="fa fa-paper-plane fa-lg"></i>
            </div>
        </div>
+
+
+
    </div>
     <div class="user-profile-container">
         <div class="user-profile-header">
@@ -535,7 +556,21 @@
         </div>
     </div>
 </div>
-<div id="emojiContainer"></div>
+<!--       SMILEY-->
+
+
+
+<div class="emojiContainer" style="display: none">
+    @foreach($emoji as $emoj)
+    <div>
+        :{{ $emoj }}:
+    </div>
+   @endforeach
+
+
+
+</div>
+
 
 <script>
     var socket = io.connect('192.168.1.193:8891');
@@ -571,6 +606,16 @@
         });
 
 
+
+        $('.emojiContainer div img').on('click',function(){
+            $('#chat_area').val($('#chat_area').val()+" "+$(this).attr('alt'));
+        })
+
+
+
+
+
+
         $('body').on('click','.friend-profile',function(){
 
             $('.chat-list-data').find('li').removeClass('click-active');
@@ -595,6 +640,8 @@
                 $('.chat-area').val('');
 
                 saveMessage(chat_room_id,input,$('#current_user').val());
+
+                $('#chat_area').val('');
                 return false;
             }else{
                 return false;
@@ -649,6 +696,16 @@
 
     });
 
+    $('.fa-smile-o').on('click',function(){
+        $('.emojiContainer').toggle();
+    })
+    $(document).on("click", function(event){
+        var $trigger = $(".fa-smile-o");
+        if($trigger !== event.target && !$trigger.has(event.target).length){
+            $(".emojiContainer").hide();
+        }
+
+    });
 
 
 
