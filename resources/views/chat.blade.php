@@ -538,7 +538,7 @@
 <div id="emojiContainer"></div>
 
 <script>
-    var socket = io.connect('54.166.246.46:8891');
+    var socket = io.connect('192.168.1.193:8891');
     $(document).ready(function(){
         var BASEURL = $('#baseURL').val();
 

@@ -2,9 +2,10 @@
  * Created by john.inhog on 1/12/17.
  */
 var app = require('express')();
+
 var server =  require('http').Server(app);
 var io = require('socket.io')(server);
-var redisClient = require('redis-connetion')();
+//var redisClient = require('redis-connetion')();
 server.listen(8891);
 
 
