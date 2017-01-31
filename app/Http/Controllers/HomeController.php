@@ -144,6 +144,9 @@ class HomeController extends Controller
         return $theme->of('profile')->render();
     }
 
-
+    public function webview(){
+        $theme = Theme::uses('default')->layout('default')->setTitle('Home');
+        return $theme->of('welcome')->render();
+    }
 
 }

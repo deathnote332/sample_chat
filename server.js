@@ -12,6 +12,11 @@ server.listen(process.env.PORT || 3000, function(){
     console.log('listening on', server.address().port);
 });
 
+
+app.get('/', function(request, response) {
+    response.render('/webview')
+});
+
 io.on('connection', function (socket) {
 
     console.log("client connected");
