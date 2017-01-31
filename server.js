@@ -9,14 +9,15 @@ var io = require('socket.io')(server);
 server.listen(8891);
 
 
+app.get('/', function(request, response) {
+    response.send('connected');
+});
+
 server.listen(process.env.PORT || 3000, function(){
     console.log('listening on', server.address().port);
 });
 
 
-app.get('/', function(request, response) {
-    response.render('/webview')
-});
 
 io.on('connection', function (socket) {
 
