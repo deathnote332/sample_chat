@@ -84,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chat-list.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="chat-list.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/chat-list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="53" selection-start="906" selection-end="906" vertical-scroll-proportion="0.5553539" vertical-offset="0" max-vertical-offset="935">
+            <state line="3" column="30" selection-start="67" selection-end="67" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="935">
               <folding />
             </state>
           </provider>
@@ -111,10 +111,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Procfile" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Procfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+            <state line="1" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.02881356" vertical-offset="0" max-vertical-offset="590">
               <folding />
             </state>
           </provider>
@@ -157,12 +157,12 @@
         <option value="$PROJECT_DIR$/.env.example" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/chat.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/chat-list.blade.php" />
+        <option value="$PROJECT_DIR$/Procfile" />
       </list>
     </option>
   </component>
@@ -649,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="3" selection-start="1335" selection-end="1339" vertical-scroll-proportion="-21.576923" vertical-offset="0" max-vertical-offset="697">
@@ -719,7 +712,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/chat-list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="53" selection-start="906" selection-end="906" vertical-scroll-proportion="0.5553539" vertical-offset="0" max-vertical-offset="935">
+        <state line="3" column="30" selection-start="67" selection-end="67" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.02881356" vertical-offset="0" max-vertical-offset="590">
           <folding />
         </state>
       </provider>
