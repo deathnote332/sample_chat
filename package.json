@@ -26,9 +26,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.10.2",
+    "redis-connection": "^5.0.0",
     "socket.io": "^1.7.2"
   },
-    "engines":{
-        "node": "4.4.4"
-    }
+  "engines": {
+    "node": "4.4.4"
+  }
 }

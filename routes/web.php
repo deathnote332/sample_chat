@@ -22,7 +22,7 @@ Route::match(array('GET','POST'),'profile',   'HomeController@profile');
 
 
 Route::match(array('GET','POST'),'/',   'HomeController@home');
-Route::match(array('GET','POST'),'/webview',   'HomeController@webview');
+
 
 Route::group(['middleware'=>['afterAuth']],function(){
     Route::match(array('GET','POST'),'/',   'HomeController@home');

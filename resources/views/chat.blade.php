@@ -360,7 +360,7 @@
                 font-weight: 700;
             }
             .user-profile-data{
-                height: 50%;
+                height: 49%;
             }
             .user-profile-data ul{
                 padding: 10px 0px;
