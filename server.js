@@ -5,7 +5,12 @@ var app = require('express')();
 var server =  require('http').Server(app);
 var io = require('socket.io')(server);
 
-server.listen(8891);
+//server.listen(8891);
+
+
+server.listen(process.env.PORT || 3000, function(){
+    console.log('listening on', server.address().port);
+});
 
 io.on('connection', function (socket) {
 
