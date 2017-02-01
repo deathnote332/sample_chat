@@ -118,7 +118,7 @@
         background: #fdfdfe;
         color: #5a5252;
     }
-    #about h2 ,#introduction h2 ,#skills h2{
+    #about h2 ,#introduction h2 ,#skills h2 ,#skills-1 h2,#portfolio h2,#experience h2{
         color: #5a5252;
     }
     #about .container .row{
@@ -171,7 +171,8 @@
     }
     
     #portfolio{
-        padding: 80px 0 0 0;
+        padding: 80px 0;
+        border-bottom: 1px solid #F1EBEB;
     }
     #portfolio .container .row{
         display: block;
@@ -190,20 +191,33 @@
         height: 200px;
         width: 290px;
     }
-    
+
+    #experience{
+        padding: 60px 0 0 0;
+        color: #5a5252;
+    }
+    #experience .container .row{
+        display: block;
+    }
+    #experience img{
+        width: 100%;
+        height:  200px;
+    }
+
+
 </style>
 <!--HEADER-->
 <div class="profile-image" id="top" data-spy="scroll" >
     <div class="header-nav col-md-12">
         <ul>
             <li>
-                <a class="" href="#about">Lorem</a>
+                <a class="page-scroll" href="#about">Lorem</a>
             </li>
             <li>
-                <a class="page-scroll" href="#homers">Lorem</a>
+                <a class="page-scroll" href="#skills">Lorem</a>
             </li>
             <li>
-                <a class="page-scroll" href="#sample">Lorem</a>
+                <a class="page-scroll" href="#skills-1">Lorem</a>
             </li>
             <li>
                 <a class="page-scroll" href="#sample">Lorem</a>
@@ -376,7 +390,10 @@
 
     <div class="container">
         <div class="row">
-            <h2>Portfolio</h2>
+            <div class="col-md-12">
+                <h2>Portfolio.</h2>
+            </div>
+
         </div>
         <div class="row">
             <div class="portfolio-list">
@@ -410,9 +427,39 @@
     </div>
 
 </section>
+<section id="experience">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Experience.</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+               <img src="../assets/images/background.jpg">
+
+            </div>
+            <div class="col-md-9">
+                <div><span>2015 - Present</span></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+
+            </div>
+        </div>
+
+    </div>
+</section>
 
 
 <script>
+
+    var a = 5;
+    var b = 12;
+    a = a+b;
+    b = a - b;
+    a = a - b;
+
+
+    console.log(a+" "+b);
 
     //SMOOTH SCROLLING
     $('a.page-scroll').bind('click', function(event) {

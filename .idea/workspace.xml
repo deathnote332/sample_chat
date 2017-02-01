@@ -84,7 +84,7 @@
       <file leaf-file-name="profile.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="19" selection-start="3017" selection-end="3017" vertical-scroll-proportion="-2.268859" vertical-offset="4012" max-vertical-offset="7480">
+            <state line="220" column="17" selection-start="4191" selection-end="4191" vertical-scroll-proportion="0.52998066" vertical-offset="3466" max-vertical-offset="8279">
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -786,7 +786,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="19" selection-start="3017" selection-end="3017" vertical-scroll-proportion="-2.268859" vertical-offset="4012" max-vertical-offset="7480">
+        <state line="220" column="17" selection-start="4191" selection-end="4191" vertical-scroll-proportion="0.52998066" vertical-offset="3466" max-vertical-offset="8279">
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
