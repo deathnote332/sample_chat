@@ -1,5 +1,6 @@
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Poppins|Roboto');
+    @import url('https://fonts.googleapis.com/css?family=Poppins');
+
     html,body,.profile-image{
         height: 100%;
         font-family: 'Poppins', arial, sans-serif;
@@ -56,29 +57,80 @@
     }
     .header-nav ul{
         display: block;
-        padding: 0;
+
         margin: 0;
+        padding: 40px 0px;
 
     }
 
     .header-nav ul li{
-        padding: 40px;
+        padding: 10px 30px;
         list-style-type: none;
         display: inline-block;
+        border-right: 1px solid white;
+
     }
+
+    .header-nav ul li:last-child{
+        border: none;
+    }
+
+    .header-nav ul li a{
+        text-decoration: none;
+
+    }
+
 
     .profile-body{
         height: 80%;
     }
-</style>
 
-<div class="profile-image">
+    .navbar{
+        margin-bottom: 0px;
+        border-radius: 0;
+    }
+
+    .navbar .container{
+        margin: 0;
+        padding: 0 40px;
+        width: 100%;
+    }
+
+    .affix {
+        top: 0;
+        width: 100%;
+    }
+
+    .affix-top {
+        width: 100%;
+    }
+
+    .affix-bottom {
+        position: absolute;
+        width: 100%;
+    }
+
+    #about{
+        padding: 650px 0 0 0;
+        background: black;
+    }
+    #homers{
+         padding: 650px 0 0 0;
+         background: green;
+     }
+    #sample{
+        padding: 650px 0 0 0;
+        background: red;
+    }
+</style>
+<!--HEADER-->
+<div class="profile-image" id="top" data-spy="scroll">
     <div class="header-nav col-md-12">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Sign in</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
         </ul>
     </div>
     <div class="col-md-12 profile-body">
@@ -98,5 +150,73 @@
             </div>
         </div>
     </div>
-
 </div>
+<!--END OF HEADER-->
+<div id="navigation" style="height: 50px">
+    <nav class="navbar navbar-default" data-spy="affix" data-offset-top="650">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#top">
+                    Sample
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#homers">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#sample">About</a>
+                    </li>
+                    <li>
+                        <a>Sign in</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<section id="about">
+    <div class="container">
+        
+    </div>
+</section>
+<section id="homers">
+    <div class="container">
+
+    </div>
+</section>
+<section id="sample">
+    <div class="container">
+
+    </div>
+</section>
+
+
+
+<script>
+    //SMOOTH SCROLLING
+    jQuery('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+</script>
+
+
+
+
+
+
