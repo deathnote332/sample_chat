@@ -26,7 +26,7 @@
     <div class="col-md-12 profile-body">
         <div class="container">
             <div class="row">
-                <h1>Hi! I'm John Paul</h1>
+                <h1>Hi! I'm Lorem</h1>
 
                 <h2 class="cd-headline clip">
 
@@ -110,12 +110,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img class="profile-image" src="../assets/images/profile.png">
+                <img class="profile-image" src="../assets/images/background.jpg">
             </div>
             <div class="col-md-6">
 
                 <h2 class="section-title">Introduction.</h2>
-                <p>Hello everyone! Im <b>John Paul Inhog</b>, currently working as Junir Software Devloper. I am always passionate about programming, love to create useful modern applications & provide great client support. </b></p>
+                <p>Hello everyone! Im <b>Lorem</b>, currently working as Junir Software Devloper. I am always passionate about programming, love to create useful modern applications & provide great client support. </b></p>
                 <ul>
                     <li>Date of Birth: 04 June, 1990</li>
                     <li>Country: Philippines</li>
@@ -130,27 +130,27 @@
         <div class="row">
             <div class="col-md-4">
                 <h2 class="section-title">Skills.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+                <p>I am a full stack web developer. I can do back-end and front-end development. Passionate in learning new things and creating new ideas.</p>
 
             </div>
             <div class="col-md-4">
                 <h2 class="section-title">Back-end</h2>
                 <ul class="wow fadeInLeft">
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
+                    <li>PHP/PHP Laravel</li>
+                    <li>JQuery</li>
+                    <li>MySQL</li>
+                    <li>Java</li>
+                    <li>Visual Basic</li>
+
                 </ul>
             </div>
             <div class="col-md-4">
                 <h2 class="section-title">Front-end</h2>
                 <ul class="wow fadeInRight">
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Photoshop(Basic)</li>
+
                 </ul>
             </div>
         </div>
@@ -162,27 +162,25 @@
         <div class="row">
             <div class="col-md-4">
                 <h2 class="section-title">Skills.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+                <p>I am a full stack web developer. I can do back-end and front-end development. Passionate in learning new things and creating new ideas.</p>
 
             </div>
             <div class="col-md-4">
                 <h2 class="section-title">Back-end</h2>
                 <ul class="wow fadeInLeft">
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
+                    <li>PHP/PHP Laravel</li>
+                    <li>JQuery</li>
+                    <li>MySQL</li>
+                    <li>Java</li>
+                    <li>Visual Basic</li>
                 </ul>
             </div>
             <div class="col-md-4">
                 <h2 class="section-title">Front-end</h2>
                 <ul class="wow fadeInRight">
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Photoshop(Basic)</li>
                 </ul>
             </div>
         </div>
@@ -199,29 +197,45 @@
 
         </div>
         <div class="row">
-            <div class="portfolio-items col-md-3">
-                    <img src="../assets/images/background.jpg">
+            <div class="col-md-3 ">
+                <div class="portfolio-items">
+                    <img class="grow center-block" src="../assets/images/background.jpg">
+                </div>
             </div>
-            <div class="portfolio-items col-md-3">
-                <img src="../assets/images/background.jpg">
+            <div class="col-md-3 ">
+                <div class="portfolio-items">
+                    <img class="grow center-block" src="../assets/images/background.jpg">
+                </div>
             </div>
-            <div class="portfolio-items col-md-3">
-                <img src="../assets/images/background.jpg">
+            <div class="col-md-3 ">
+                <div class="portfolio-items">
+                    <img class="grow center-block" src="../assets/images/background.jpg">
+                </div>
             </div>
-            <div class="portfolio-items col-md-3">
-                <img src="../assets/images/background.jpg">
+            <div class="col-md-3 ">
+                <div class="portfolio-items">
+                    <img class="grow center-block" src="../assets/images/background.jpg">
+                </div>
             </div>
-            <div class="portfolio-items col-md-3">
-                <img src="../assets/images/background.jpg">
+            <div class="col-md-3 ">
+                <div class="portfolio-items">
+                    <img class="grow center-block" src="../assets/images/background.jpg">
+                </div>
             </div>
-            <div class="portfolio-items col-md-3">
-                <img src="../assets/images/background.jpg">
+            <div class="col-md-3 ">
+                <div class="portfolio-items">
+                    <img class="grow center-block" src="../assets/images/background.jpg">
+                </div>
             </div>
-            <div class="portfolio-items col-md-3">
-                <img src="../assets/images/background.jpg">
+            <div class="col-md-3 ">
+                <div class="portfolio-items">
+                    <img class="grow center-block" src="../assets/images/background.jpg">
+                </div>
             </div>
-            <div class="portfolio-items col-md-3">
-                <img src="../assets/images/background.jpg">
+            <div class="col-md-3 ">
+                <div class="portfolio-items">
+                    <img class="grow center-block" src="../assets/images/background.jpg">
+                </div>
             </div>
         </div>
     </div>
@@ -240,8 +254,8 @@
 
             </div>
             <div class="col-md-9">
-                <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s"><span>2015 - Present</span></div>
-                <div class="icon-position wow fadeIn" data-wow-duration="1s" data-wow-delay="1s"><span class="fa fa-briefcase fa-lg"></span> Lorem ipsum</div>
+                <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s"><span>2016 - Present</span></div>
+                <div class="icon-position wow fadeIn" data-wow-duration="1s" data-wow-delay="1s"><span class="fa fa-briefcase fa-lg"></span>Junior Software Developer</div>
                 <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
 
             </div>
@@ -252,8 +266,8 @@
 
         </div>
         <div class="col-md-9">
-            <div class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1s"><span>2015 - Present</span></div>
-            <div class="icon-position wow fadeIn" data-wow-duration="2s" data-wow-delay="1s"><span class="fa fa-briefcase fa-lg"></span> Lorem ipsum</div>
+            <div class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1s"><span>2014 - 2016</span></div>
+            <div class="icon-position wow fadeIn" data-wow-duration="2s" data-wow-delay="1s"><span class="fa fa-briefcase fa-lg"></span>System Developer</div>
             <p class="wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
 
         </div>
@@ -272,21 +286,19 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <div class="wow fadeInDown"><span>2002</span></div>
-                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
-                <div><h4>Loren Ipsum</h4></div>
+                <div class="wow fadeInDown"><span>2016</span></div>
+                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Pamantasan ng Lungsod ng Pasig</div>
+                <div><h4>Bachelor of Science in Information Technology</h4></div>
                 <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
             </div>
             <div class="col-md-4">
-                <div class="wow fadeInDown"><span>2002</span></div>
-                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
-                <div><h4>Loren Ipsum</h4></div>
+                <div class="wow fadeInDown"><span>2012</span></div>
+                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Sagad High School</div>
                 <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
             </div>
             <div class="col-md-4">
-                <div class="wow fadeInDown"><span>2002</span></div>
-                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
-                <div><h4>Loren Ipsum</h4></div>
+                <div class="wow fadeInDown"><span>2007</span></div>
+                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Liberato Damian Elem. School</div>
                 <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
             </div>
         </div>

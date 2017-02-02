@@ -75,7 +75,7 @@
       <file leaf-file-name="profile.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="0" selection-start="4292" selection-end="4292" vertical-scroll-proportion="0.42746615" vertical-offset="1734" max-vertical-offset="7021">
+            <state line="295" column="104" selection-start="11760" selection-end="11760" vertical-scroll-proportion="0.50676984" vertical-offset="4753" max-vertical-offset="7225">
               <folding />
             </state>
           </provider>
@@ -84,7 +84,7 @@
       <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/themes/default/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="44" selection-start="3174" selection-end="3174" vertical-scroll-proportion="-6.8076925" vertical-offset="1098" max-vertical-offset="1938">
+            <state line="75" column="44" selection-start="3174" selection-end="3174" vertical-scroll-proportion="-14.653846" vertical-offset="894" max-vertical-offset="1938">
               <folding />
             </state>
           </provider>
@@ -93,7 +93,7 @@
       <file leaf-file-name="profile.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/css/profile/profile.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="17" selection-start="3031" selection-end="3031" vertical-scroll-proportion="1.3076923" vertical-offset="3723" max-vertical-offset="6341">
+            <state line="45" column="24" selection-start="737" selection-end="737" vertical-scroll-proportion="-9.461538" vertical-offset="519" max-vertical-offset="6647">
               <folding />
             </state>
           </provider>
@@ -829,23 +829,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/profile/profile.css">
+    <entry file="file://$PROJECT_DIR$/public/themes/default/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="17" selection-start="3031" selection-end="3031" vertical-scroll-proportion="1.3076923" vertical-offset="3723" max-vertical-offset="6341">
+        <state line="75" column="44" selection-start="3174" selection-end="3174" vertical-scroll-proportion="-14.653846" vertical-offset="894" max-vertical-offset="1938">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/themes/default/config.php">
+    <entry file="file://$PROJECT_DIR$/public/assets/css/profile/profile.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="44" selection-start="3174" selection-end="3174" vertical-scroll-proportion="-6.8076925" vertical-offset="1098" max-vertical-offset="1938">
+        <state line="45" column="24" selection-start="737" selection-end="737" vertical-scroll-proportion="-9.461538" vertical-offset="519" max-vertical-offset="6647">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="0" selection-start="4292" selection-end="4292" vertical-scroll-proportion="0.42746615" vertical-offset="1734" max-vertical-offset="7021">
+        <state line="295" column="104" selection-start="11760" selection-end="11760" vertical-scroll-proportion="0.50676984" vertical-offset="4753" max-vertical-offset="7225">
           <folding />
         </state>
       </provider>
