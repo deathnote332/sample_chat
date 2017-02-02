@@ -4,29 +4,29 @@
     <div class="header-nav col-md-12">
         <ul>
             <li>
-                <a class="page-scroll" href="#about">Lorem</a>
+                <a class="page-scroll" href="#about">About</a>
             </li>
             <li>
-                <a class="page-scroll" href="#skills">Lorem</a>
+                <a class="page-scroll" href="#skills">Skill</a>
             </li>
             <li>
-                <a class="page-scroll" href="#portfolio">Lorem</a>
+                <a class="page-scroll" href="#portfolio">Portfolio</a>
             </li>
             <li>
-                <a class="page-scroll" href="#experience">Lorem</a>
+                <a class="page-scroll" href="#experience">Experience</a>
             </li>
             <li>
-                <a class="page-scroll" href="#education">Lorem</a>
+                <a class="page-scroll" href="#education">Education</a>
             </li>
             <li>
-                <a class="page-scroll" href="#contact">Lorem</a>
+                <a class="page-scroll" href="#contact">Contact</a>
             </li>
         </ul>
     </div>
     <div class="col-md-12 profile-body">
         <div class="container">
             <div class="row">
-                <h1>Hi! I'm Lorem</h1>
+                <h1>Hi! I'm John Paul Inhog</h1>
 
                 <h2 class="cd-headline clip">
 
@@ -60,22 +60,22 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">Lorem</a>
+                        <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#skills">Lorem</a>
+                        <a class="page-scroll" href="#skills">Skill</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Lorem</a>
+                        <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#experience">Lorem</a>
+                        <a class="page-scroll" href="#experience">Experience</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#education">Lorem</a>
+                        <a class="page-scroll" href="#education">Education</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Lorem</a>
+                        <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -110,7 +110,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img class="profile-image" src="../assets/images/background.jpg">
+                <img class="profile-image" src="../assets/images/profile.png">
             </div>
             <div class="col-md-6">
 
