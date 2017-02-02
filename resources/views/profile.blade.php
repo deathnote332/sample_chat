@@ -1,264 +1,6 @@
-<style>
-    @import url('https://fonts.googleapis.com/css?family=Poppins');
-
-    html,body,.profile-image{
-        height: 100%;
-        font-family: 'Poppins', sans-serif;
-        display: block;
-        color: white;
-
-    }
-    .profile-image{
-        /*background: url('/assets/images/aa.png') no-repeat center;*/
-        /*background-size: contain;*/
-        background: #111111;
-    }
-
-    .container{
-        height: 100%;
-        display: table;
-        width: 100%;
-        padding-bottom: 0px;
-        margin: 0;
-        padding: 0 50px;
-    }
-
-    .row{
-        display: table-cell;
-        vertical-align: middle;
-        background-size: cover;
-
-    }
-
-    .row h1,h2,a{
-        color: white;
-        letter-spacing: 2px;
-    }
-
-    .row h2{
-        font-size: 24px;
-        font-family: 'Poppins', arial, sans-serif;
-        font-weight: lighter !important;
-        margin: 10px 0px;
-        line-height: 1.8em;
-
-    }
-    .cd-headline span b{
-        letter-spacing: 1px;
-        font-size: 20px;
-        font-weight: 100;
-    }
-
-    .row button{
-        margin-top: 10px;
-        font-family: 'Poppins', arial, sans-serif;
-        padding: 5px 30px;
-        background-color: #fdfdfe;
-        width: 200px;
-        border: none;
-        color: #000000;
-
-    }
-    .header-nav{
-       text-align: right;
-    }
-    .header-nav ul{
-        display: block;
-
-        margin: 0;
-        padding: 40px 0px;
-
-    }
-
-    .header-nav ul li{
-        padding: 10px ;
-        list-style-type: none;
-        display: inline-block;
-        border-right: 1px solid white;
-
-    }
-
-    .header-nav ul li:last-child{
-        border: none;
-    }
-
-    .header-nav ul li a{
-        text-decoration: none;
-        letter-spacing: 2px;
-
-        
-
-    }
-
-
-    .profile-body{
-        height: 80%;
-    }
-
-    .navbar{
-        margin-bottom: 0px;
-        border-radius: 0;
-        z-index: 1000;
-    }
-
-    .navbar .container{
-        margin: 0;
-        padding: 0 40px;
-        width: 100%;
-    }
-
-    .affix {
-        top: 0;
-        width: 100%;
-    }
-
-    .affix-top {
-        width: 100%;
-    }
-
-    .affix-bottom {
-        position: absolute;
-        width: 100%;
-    }
-
-    #about{
-        padding-top: 80px;
-        background: #fdfdfe;
-        color: #5a5252;
-    }
-    #about h2 ,#introduction h2 ,#skills h2 ,#skills-1 h2,#portfolio h2,#experience h2,#education h2 {
-        color: #5a5252;
-    }
-    #about .container .row{
-        display: block;
-    }
-
-    #introduction{
-        padding: 52px 0px;
-        border-bottom: 1px solid #F1EBEB;
-        color: #5a5252;
-    }
-
-    #introduction .container .row{
-        display: block;
-    }
-
-    #introduction .profile-image{
-        height: 200px;
-        width: auto;
-        height: 300px;
-        width: 80%;
-
-    }
-    #introduction ul{
-        padding: 0 0 0 20px;
-        margin: 0;
-    }
-    #introduction a{
-        background-color: #111111;
-        border-radius: 1px;
-        color: #ffffff !important;
-        display: inline-block;
-        font-size: 13px;
-        letter-spacing: 1px;
-        margin: 14px 0;
-        padding: 10px 30px;
-        transition: all 0.3s ease;
-    }
-
-
-    #skills{
-         padding: 80px 0 0 0;
-        color: #5a5252;
-     }
-
-    #skills-1{
-        padding: 80px 0;
-        color: #5a5252;
-        border-bottom: 1px solid #F1EBEB;
-    }
-    
-    #portfolio{
-        padding: 80px 0;
-        border-bottom: 1px solid #F1EBEB;
-    }
-    #portfolio .container .row{
-        display: block;
-    }
-
-    #portfolio .portfolio-list{
-        display: block;
-    }
-    
-    #portfolio .portfolio-list .portfolio-items{
-        display: inline-block;
-        padding: 13px;
-
-    }
-    .portfolio-items img{
-        height: 200px;
-        width: 290px;
-    }
-
-    #experience{
-        padding: 80px 0;
-        color: #5a5252;
-        border-bottom: 1px solid #F1EBEB;
-    }
-    #experience .container .row{
-        display: block;
-        padding-top: 10px;
-    }
-    #experience img{
-        width: 100%;
-        height:  200px;
-    }
-
-    #education{
-        padding: 60px 0;
-        color: #5a5252;
-    }
-    #education .container .row{
-        display: block;
-    }
-    #qoutes{
-        background-image: url(../assets/images/background.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-attachment: fixed;
-        background-size: cover;
-        padding: 100px 0px;
-        position: relative;
-    }
-    .qoutes-overlay{
-        position: absolute;
-        background: rgba(0, 0, 0, 0.25);
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    #contact{
-        padding: 80px 0;
-        color: #5a5252;
-    }
-    #contact .container .row{
-        display: block;
-
-    }
-
-    .form-control{
-        font-family: 'Source Sans Pro', Arial, sans-serif;
-        font-size: 13px;
-        height: 30px;
-        border-radius: 0px;
-        box-shadow: none;
-        border: 2px solid #E6E6E6;
-    }
-
-</style>
+{{ Theme::asset()->add('login', '/assets/css/profile/profile.css')}}
 <!--HEADER-->
-<div class="profile-image" id="top" data-spy="scroll" >
+<div class="profile-image" id="top" data-spy="scroll">
     <div class="header-nav col-md-12">
         <ul>
             <li>
@@ -276,29 +18,33 @@
             <li>
                 <a class="page-scroll" href="#education">Lorem</a>
             </li>
+            <li>
+                <a class="page-scroll" href="#contact">Lorem</a>
+            </li>
         </ul>
     </div>
     <div class="col-md-12 profile-body">
         <div class="container">
             <div class="row">
-                <h1>Hi! I'm Lorem Ipsum</h1>
+                <h1>Hi! I'm John Paul</h1>
 
                 <h2 class="cd-headline clip">
 
                     <span class="cd-words-wrapper">
-                    <b class="is-visible">Starbucks Coffee mixer</b>
-                    <b>Code lover $ certified lover</b>
-                    <b>Lorem ipsum de tat & ate itum tae</b>
+                    <b class="is-visible">Coding is my passion</b>
+                    <b>Coffee addict!</b>
+                    <b>Try Code, Code and Try</b>
                     </span>
                 </h2>
-                <button class="">View Details</button>
+               <div><a class="page-scroll view-details slideInUp" href="#about">VIEW DETAILS</a> </div>
             </div>
         </div>
     </div>
 </div>
 <!--END OF HEADER-->
+
 <div id="navigation" style="height: 50px">
-    <nav class="navbar navbar-default" data-spy="affix" data-offset-top="640">
+    <nav class="navbar navbar-default navbar-static-top affix" data-spy="affix" data-offset-top="640">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -308,7 +54,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#top">
-                    Sample
+                    JPI
                 </a>
             </div>
             <div class="navbar-collapse collapse">
@@ -328,6 +74,9 @@
                     <li>
                         <a class="page-scroll" href="#education">Lorem</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Lorem</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -337,26 +86,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Things I do.</h2>
+                <h2 class="section-title">Things I do.</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
-                <h2><span>1.</span> Things I do.</h2>
-                <p>Lorem ipsum lorem ipsum</p>
+            <div class="col-md-4">
+                <h3 class="wow fadeInDown"><span class="number">1.</span>Web Development</h3>
+                <p>Creating useful web applications ready for business purposes.</p>
             </div>
-            <div class="col-md-3">
-                <h2><span>2.</span>Things I do.</h2>
-                <p>Lorem ipsum lorem ipsum</p>
+            <div class="col-md-4">
+                <h3 class="wow fadeInDown"><span class="number">2.</span>Mobile Development</h3>
+                <p>Building mobile applications for clients.</p>
             </div>
-            <div class="col-md-3">
-                <h2><span>3.</span>Things I do.</h2>
-                <p>Lorem ipsum lorem ipsum</p>
+            <div class="col-md-4">
+                <h3 class="wow fadeInDown"><span class="number">3.</span>Desktop Applications</h3>
+                <p>Creating stand-alone application for your personal needs.</p>
             </div>
-            <div class="col-md-3">
-                <h2><span>4.</span>Things I do.</h2>
-                <p>Lorem ipsum lorem ipsum</p>
-            </div>
+
         </div>
     </div>
 </section>
@@ -364,17 +110,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img class="profile-image" src="../assets/images/background.jpg">
+                <img class="profile-image" src="../assets/images/leeming.png">
             </div>
             <div class="col-md-6">
 
-                <h2>Introduction.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+                <h2 class="section-title">Introduction.</h2>
+                <p>Hello everyone! Im <b>John Paul Inhog</b>, currently working as Junir Software Devloper. I am always passionate about programming, love to create useful modern applications & provide great client support. </b></p>
                 <ul>
                     <li>Date of Birth: 04 June, 1990</li>
                     <li>Country: Philippines</li>
                 </ul>
-                <div><a href="#">Lorem ipsum</a></div>
+                <div class="wow slideInUp"><a href="#">Download CV</a></div>
             </div>
         </div>
     </div>
@@ -383,13 +129,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h2>Skills.</h2>
+                <h2 class="section-title">Skills.</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
 
             </div>
             <div class="col-md-4">
-                <h2>Back-end</h2>
-                <ul>
+                <h2 class="section-title">Back-end</h2>
+                <ul class="wow fadeInLeft">
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
@@ -398,8 +144,8 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <h2>Front-end</h2>
-                <ul>
+                <h2 class="section-title">Front-end</h2>
+                <ul class="wow fadeInRight">
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
@@ -415,13 +161,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h2>Skills.</h2>
+                <h2 class="section-title">Skills.</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
 
             </div>
             <div class="col-md-4">
-                <h2>Back-end</h2>
-                <ul>
+                <h2 class="section-title">Back-end</h2>
+                <ul class="wow fadeInLeft">
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
@@ -430,8 +176,8 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <h2>Front-end</h2>
-                <ul>
+                <h2 class="section-title">Front-end</h2>
+                <ul class="wow fadeInRight">
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
                     <li>Lorem Ipsum</li>
@@ -448,39 +194,36 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Portfolio.</h2>
+                <h2 class="section-title">Portfolio.</h2>
             </div>
 
         </div>
         <div class="row">
-            <div class="portfolio-list">
-                <div class="portfolio-items">
+            <div class="portfolio-items col-md-3">
                     <img src="../assets/images/background.jpg">
-                </div>
-                <div class="portfolio-items">
-                    <img src="../assets/images/background.jpg">
-                </div>
-                <div class="portfolio-items">
-                    <img src="../assets/images/background.jpg">
-                </div>
-                <div class="portfolio-items">
-                    <img src="../assets/images/background.jpg">
-                </div>
-                <div class="portfolio-items">
-                    <img src="../assets/images/background.jpg">
-                </div>
-                <div class="portfolio-items">
-                    <img src="../assets/images/background.jpg">
-                </div>
-                <div class="portfolio-items">
-                    <img src="../assets/images/background.jpg">
-                </div>
-                <div class="portfolio-items">
-                    <img src="../assets/images/background.jpg">
-                </div>
+            </div>
+            <div class="portfolio-items col-md-3">
+                <img src="../assets/images/background.jpg">
+            </div>
+            <div class="portfolio-items col-md-3">
+                <img src="../assets/images/background.jpg">
+            </div>
+            <div class="portfolio-items col-md-3">
+                <img src="../assets/images/background.jpg">
+            </div>
+            <div class="portfolio-items col-md-3">
+                <img src="../assets/images/background.jpg">
+            </div>
+            <div class="portfolio-items col-md-3">
+                <img src="../assets/images/background.jpg">
+            </div>
+            <div class="portfolio-items col-md-3">
+                <img src="../assets/images/background.jpg">
+            </div>
+            <div class="portfolio-items col-md-3">
+                <img src="../assets/images/background.jpg">
             </div>
         </div>
-
     </div>
 
 </section>
@@ -488,7 +231,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Experience.</h2>
+                <h2 class="section-title">Experience.</h2>
             </div>
         </div>
         <div class="row">
@@ -497,9 +240,9 @@
 
             </div>
             <div class="col-md-9">
-                <div><span>2015 - Present</span></div>
-                <div><span class="fa fa-briefcase fa-lg"></span> Lorem ipsum</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+                <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s"><span>2015 - Present</span></div>
+                <div class="icon-position wow fadeIn" data-wow-duration="1s" data-wow-delay="1s"><span class="fa fa-briefcase fa-lg"></span> Lorem ipsum</div>
+                <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
 
             </div>
         </div>
@@ -509,9 +252,9 @@
 
         </div>
         <div class="col-md-9">
-            <div><span>2015 - Present</span></div>
-            <div><span class="fa fa-briefcase fa-lg"></span> Lorem ipsum</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+            <div class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1s"><span>2015 - Present</span></div>
+            <div class="icon-position wow fadeIn" data-wow-duration="2s" data-wow-delay="1s"><span class="fa fa-briefcase fa-lg"></span> Lorem ipsum</div>
+            <p class="wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
 
         </div>
     </div>
@@ -522,26 +265,29 @@
 <section id="education">
     <div class="container">
         <div class="row">
-            <h2>Education.</h2>
+            <div class="col-md-12">
+                <h2 class="section-title">Education.</h2>
+            </div>
+
         </div>
         <div class="row">
             <div class="col-md-4">
-                <div><span>2002</span></div>
-                <div><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
+                <div class="wow fadeInDown"><span>2002</span></div>
+                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
                 <div><h4>Loren Ipsum</h4></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+                <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
             </div>
             <div class="col-md-4">
-                <div><span>2002</span></div>
-                <div><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
+                <div class="wow fadeInDown"><span>2002</span></div>
+                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
                 <div><h4>Loren Ipsum</h4></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+                <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
             </div>
             <div class="col-md-4">
-                <div><span>2002</span></div>
-                <div><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
+                <div class="wow fadeInDown"><span>2002</span></div>
+                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
                 <div><h4>Loren Ipsum</h4></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+                <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
             </div>
         </div>
     </div>
@@ -558,22 +304,22 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1 col-md-push-1">
                 <div class="col-md-4">
-                    <div><span class="fa fa-map-marker"> Address</span></div>
+                    <div class="contact-icon wow fadeInDown"><span class="fa fa-map-marker"> Address</span></div>
                     <p>Lorem Ipsum Sum Lorem Ip</p>
                 </div>
                 <div class="col-md-4">
-                    <div><span class="fa fa-envelope"> Email</span></div>
+                    <div class="contact-icon wow fadeInDown"><span class="fa fa-envelope"> Email</span></div>
                     <p>Lorem Ipsum Sum Lorem Ip</p>
                 </div>
                 <div class="col-md-4">
-                    <div><span class="fa fa-phone"> Phone</span></div>
+                    <div class="contact-icon wow fadeInDown"><span class="fa fa-phone"> Phone</span></div>
                     <p>Lorem Ipsum Sum Lorem Ip</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" url="email.php">
                     <div class="form-group">
                         <div class="col-md-12">
                             <p class="confirmation send-sucess"></p>
@@ -591,7 +337,38 @@
         </div>
     </div>
 </section>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul>
+                    <li>
+                        <span class="fa fa-facebook fa-lg"></span>
+                    </li>
+                    <li>
+                        <span class="fa fa-instagram fa-lg"></span>
+                    </li>
+                    <li>
+                        <span class="fa fa-google-plus fa-lg"></span>
+                    </li>
+                    <li>
+                        <span class="fa fa-github fa-lg"></span>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <p>Copyright 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
 <script>
+
+
 
 
     var a = 5;
@@ -613,6 +390,13 @@
     });
 
 
+    $('body').scrollspy({
+        target: '.navbar-static-top'
+    })
+
+    $(document).ready(function(){
+        new WOW().init();
+    })
 
 </script>
 

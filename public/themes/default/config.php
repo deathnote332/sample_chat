@@ -72,6 +72,9 @@ return array(
             $theme->asset()->add('animated-header.js', 'assets/js/animated-header.js');
             $theme->asset()->add('animated-header.css', 'assets/css/animated-header.css');
 
+            $theme->asset()->add('animate.css', 'assets/css/animate.css');
+            $theme->asset()->add('animate.js', 'assets/js/wow.min.js');
+
 
 
 
