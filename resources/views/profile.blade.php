@@ -32,7 +32,7 @@
 
     .row h1,h2,a{
         color: white;
-
+        letter-spacing: 2px;
     }
 
     .row h2{
@@ -43,13 +43,18 @@
         line-height: 1.8em;
 
     }
+    .cd-headline span b{
+        letter-spacing: 1px;
+        font-size: 20px;
+        font-weight: 100;
+    }
 
     .row button{
         margin-top: 10px;
         font-family: 'Poppins', arial, sans-serif;
         padding: 5px 30px;
         background-color: #fdfdfe;
-        width: 15%;
+        width: 200px;
         border: none;
         color: #000000;
 
@@ -66,7 +71,7 @@
     }
 
     .header-nav ul li{
-        padding: 10px 30px;
+        padding: 10px ;
         list-style-type: none;
         display: inline-block;
         border-right: 1px solid white;
@@ -79,6 +84,9 @@
 
     .header-nav ul li a{
         text-decoration: none;
+        letter-spacing: 2px;
+
+        
 
     }
 
@@ -118,7 +126,7 @@
         background: #fdfdfe;
         color: #5a5252;
     }
-    #about h2 ,#introduction h2 ,#skills h2 ,#skills-1 h2,#portfolio h2,#experience h2{
+    #about h2 ,#introduction h2 ,#skills h2 ,#skills-1 h2,#portfolio h2,#experience h2,#education h2 {
         color: #5a5252;
     }
     #about .container .row{
@@ -193,17 +201,60 @@
     }
 
     #experience{
-        padding: 60px 0 0 0;
+        padding: 80px 0;
         color: #5a5252;
+        border-bottom: 1px solid #F1EBEB;
     }
     #experience .container .row{
         display: block;
+        padding-top: 10px;
     }
     #experience img{
         width: 100%;
         height:  200px;
     }
 
+    #education{
+        padding: 60px 0;
+        color: #5a5252;
+    }
+    #education .container .row{
+        display: block;
+    }
+    #qoutes{
+        background-image: url(../assets/images/background.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        padding: 100px 0px;
+        position: relative;
+    }
+    .qoutes-overlay{
+        position: absolute;
+        background: rgba(0, 0, 0, 0.25);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    #contact{
+        padding: 80px 0;
+        color: #5a5252;
+    }
+    #contact .container .row{
+        display: block;
+
+    }
+
+    .form-control{
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+        font-size: 13px;
+        height: 30px;
+        border-radius: 0px;
+        box-shadow: none;
+        border: 2px solid #E6E6E6;
+    }
 
 </style>
 <!--HEADER-->
@@ -217,10 +268,13 @@
                 <a class="page-scroll" href="#skills">Lorem</a>
             </li>
             <li>
-                <a class="page-scroll" href="#skills-1">Lorem</a>
+                <a class="page-scroll" href="#portfolio">Lorem</a>
             </li>
             <li>
-                <a class="page-scroll" href="#sample">Lorem</a>
+                <a class="page-scroll" href="#experience">Lorem</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#education">Lorem</a>
             </li>
         </ul>
     </div>
@@ -266,11 +320,14 @@
                         <a class="page-scroll" href="#skills">Lorem</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#skills-1">Lorem</a>
+                        <a class="page-scroll" href="#portfolio">Lorem</a>
                     </li>
-
-
-
+                    <li>
+                        <a class="page-scroll" href="#experience">Lorem</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#education">Lorem</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -441,16 +498,101 @@
             </div>
             <div class="col-md-9">
                 <div><span>2015 - Present</span></div>
+                <div><span class="fa fa-briefcase fa-lg"></span> Lorem ipsum</div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
 
             </div>
         </div>
+        <div class="row">
+        <div class="col-md-3">
+            <img src="../assets/images/background.jpg">
+
+        </div>
+        <div class="col-md-9">
+            <div><span>2015 - Present</span></div>
+            <div><span class="fa fa-briefcase fa-lg"></span> Lorem ipsum</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+
+        </div>
+    </div>
 
     </div>
 </section>
 
+<section id="education">
+    <div class="container">
+        <div class="row">
+            <h2>Education.</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div><span>2002</span></div>
+                <div><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
+                <div><h4>Loren Ipsum</h4></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+            </div>
+            <div class="col-md-4">
+                <div><span>2002</span></div>
+                <div><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
+                <div><h4>Loren Ipsum</h4></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+            </div>
+            <div class="col-md-4">
+                <div><span>2002</span></div>
+                <div><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
+                <div><h4>Loren Ipsum</h4></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="qoutes">
+    <div class="container">
+        <div class="qoutes-overlay">
+        </div>
+        <div class="col-md-8 col-md-push-2 text-center">Lorem Ipsum Sum Lorem Ip</div>
+    </div>
+</section>
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-md-push-1">
+                <div class="col-md-4">
+                    <div><span class="fa fa-map-marker"> Address</span></div>
+                    <p>Lorem Ipsum Sum Lorem Ip</p>
+                </div>
+                <div class="col-md-4">
+                    <div><span class="fa fa-envelope"> Email</span></div>
+                    <p>Lorem Ipsum Sum Lorem Ip</p>
+                </div>
+                <div class="col-md-4">
+                    <div><span class="fa fa-phone"> Phone</span></div>
+                    <p>Lorem Ipsum Sum Lorem Ip</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <p class="confirmation send-sucess"></p>
+                            <p class="confirmation send-sucess"></p>
+                            <input class="form-control" type="text" name="name" placeholder="Name">
+                            <input class="form-control" type="text" name="subject" placeholder="Subject">
+                            <input class="form-control" type="email" name="email" placeholder="Email">
+                           <textarea class="form-control" name="message" rows="4" placeholder="Message"></textarea>
+                            <button class="btn" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
 
+            </div>
+        </div>
+    </div>
+</section>
 <script>
+
 
     var a = 5;
     var b = 12;
