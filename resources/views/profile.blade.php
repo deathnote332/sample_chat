@@ -110,7 +110,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img class="profile-image" src="../assets/images/leeming.png">
+                <img class="profile-image" src="../assets/images/profile.png">
             </div>
             <div class="col-md-6">
 
