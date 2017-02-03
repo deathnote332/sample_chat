@@ -4,11 +4,11 @@ html,body,.profile-image{
     height: 100%;
     font-family: 'Poppins', sans-serif;
     display: block;
-    color: white;
+
 
 }
 .profile-image{
-    /*background: url('/assets/images/aa.png') no-repeat center;*/
+    /*background: url('/assets/images/profile.png') no-repeat center;*/
     /*background-size: contain;*/
     background: #111111;
 }
@@ -16,7 +16,7 @@ html,body,.profile-image{
 
 .container{
     height: 100%;
-    display: table;
+    display: block;
     width: 100%;
     padding-bottom: 0px;
     margin: 0;
@@ -52,27 +52,31 @@ p,ul li{
 
 
 .header-nav{
-    text-align: right;
+    padding: 60px 0px;
 }
-.header-nav ul{
-    display: block;
 
+.header-nav .header-nav-list{text-align: right;padding: 0}
+.header-nav .header-nav-list ul{
+    display: block;
     margin: 0;
-    padding: 40px 0px;
+    padding: 0;
+
 
 }
 
 .header-nav ul li{
-    padding: 10px ;
+    padding: 0px 25px;
+
     list-style-type: none;
     display: inline-block;
-    border-right: 1px solid white;
+
 
 }
-
 .header-nav ul li:last-child{
-    border: none;
+    padding-right: 0;
 }
+
+
 
 .header-nav ul li a{
     text-decoration: none;
@@ -198,37 +202,18 @@ ul{
     margin: 0;
 }
 
-
-#about .container .row{
-    display: block;
-}
-
-#introduction{
-    padding: 35px 0px;
-    border-bottom: 1px solid #F1EBEB;
-}
-
-#introduction .container .row{
-    display: block;
-}
-
-#introduction .profile-image{
-    height: 200px;
-    width: auto;
-    height: 300px;
-    width: 80%;
-
-}
-#introduction ul{
+#about ul{
     padding: 0 0 0 20px;
     margin-top: 10px;
 }
-#introduction ul li{
+#about ul li{
 
     padding: 10px 0px;
+
+
 }
 
-#introduction a{
+#about a{
     background-color: #111111;
     border-radius: 1px;
     color: #ffffff !important;
@@ -240,15 +225,13 @@ ul{
     transition: all 0.3s ease;
 }
 
-
-#skills{
-    padding: 75px 0 0 0;
+#about img{
+    height: 250px;
+    width: 100% ;
 }
 
-#skills-1{
-    padding: 80px 0;
-    border-bottom: 1px solid #F1EBEB;
-}
+
+
 
 #portfolio{
     padding: 80px 0;
@@ -380,6 +363,11 @@ textarea.form-control{
     display: inline-block;
     padding: 0px 10px;
 }
+#sample{
+    color: black;
+}
+
+
 
 
 

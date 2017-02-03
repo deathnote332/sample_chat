@@ -1,32 +1,30 @@
 {{ Theme::asset()->add('login', '/assets/css/profile/profile.css')}}
 <!--HEADER-->
 <div class="profile-image" id="top" data-spy="scroll">
-    <div class="header-nav col-md-12">
-        <ul>
-            <li>
-                <a class="page-scroll" href="#about">About</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#skills">Skill</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#portfolio">Portfolio</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#experience">Experience</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#education">Education</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#contact">Contact</a>
-            </li>
-        </ul>
-    </div>
-    <div class="col-md-12 profile-body">
-        <div class="container">
-            <div class="row">
-                <h1>Hi! I'm John Paul Inhog</h1>
+    <div class="container">
+        <div class="header-nav row">
+
+            <div class="header-nav-list col-md-12">
+                <ul>
+                    <li>
+                        <a class="page-scroll" href="#about">Lorem</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#skills">Lorem</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Lorem</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#experience">Lorem</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Hi! I'm Lorem</h1>
 
                 <h2 class="cd-headline clip">
 
@@ -36,10 +34,11 @@
                     <b>Try Code, Code and Try</b>
                     </span>
                 </h2>
-               <div><a class="page-scroll view-details slideInUp" href="#about">VIEW DETAILS</a> </div>
+                <div><a class="page-scroll view-details slideInUp" href="#about">VIEW DETAILS</a> </div>
             </div>
         </div>
     </div>
+
 </div>
 <!--END OF HEADER-->
 
@@ -54,29 +53,24 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#top">
-                    JPI
+                    LOREM
                 </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">Lorem</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#skills">Skill</a>
+                        <a class="page-scroll" href="#skills">Lorem</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#portfolio">Lorem</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#experience">Experience</a>
+                        <a class="page-scroll" href="#experience">Lorem</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#education">Education</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -86,106 +80,107 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="section-title">Things I do.</h2>
+                <h2 class="section-title">About me.</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <h3 class="wow fadeInDown"><span class="number">1.</span>Web Development</h3>
-                <p>Creating useful web applications ready for business purposes.</p>
-            </div>
-            <div class="col-md-4">
-                <h3 class="wow fadeInDown"><span class="number">2.</span>Mobile Development</h3>
-                <p>Building mobile applications for clients.</p>
-            </div>
-            <div class="col-md-4">
-                <h3 class="wow fadeInDown"><span class="number">3.</span>Desktop Applications</h3>
-                <p>Creating stand-alone application for your personal needs.</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-<section id="introduction">
-    <div class="container">
-        <div class="row">
             <div class="col-md-6">
-                <img class="profile-image" src="../assets/images/profile.png">
-            </div>
-            <div class="col-md-6">
-
-                <h2 class="section-title">Introduction.</h2>
-                <p>Hello everyone! Im <b>Lorem</b>, currently working as Junir Software Devloper. I am always passionate about programming, love to create useful modern applications & provide great client support. </b></p>
+                <p>Hello everyone! Im <b>Loreasdasdam</b>, currently working as Junior Software Devloper. I had been working as web and mobile developer in the corporate world.   I am always passionate about programming, love to create useful applications and provide great client support.  </b></p>
                 <ul>
                     <li>Date of Birth: 04 June, 1990</li>
                     <li>Country: Philippines</li>
                 </ul>
                 <div class="wow slideInUp"><a href="#">Download CV</a></div>
             </div>
+            <div class="col-md-5 col-md-offset-1">
+                <img src="../assets/images/background.jpg">
+            </div>
+
         </div>
-    </div>
-</section>
-<section id="skills">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h2 class="section-title">Skills.</h2>
-                <p>I am a full stack web developer. I can do back-end and front-end development. Passionate in learning new things and creating new ideas.</p>
 
-            </div>
-            <div class="col-md-4">
-                <h2 class="section-title">Back-end</h2>
-                <ul class="wow fadeInLeft">
-                    <li>PHP/PHP Laravel</li>
-                    <li>JQuery</li>
-                    <li>MySQL</li>
-                    <li>Java</li>
-                    <li>Visual Basic</li>
-
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h2 class="section-title">Front-end</h2>
-                <ul class="wow fadeInRight">
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>Photoshop(Basic)</li>
-
-                </ul>
-            </div>
-        </div>
     </div>
 </section>
 
-<section id="skills-1">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h2 class="section-title">Skills.</h2>
-                <p>I am a full stack web developer. I can do back-end and front-end development. Passionate in learning new things and creating new ideas.</p>
+<!--<section id="introduction">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-6">-->
+<!--                <img class="profile-image" src="../assets/images/background.jpg">-->
+<!--            </div>-->
+<!--            <div class="col-md-6">-->
+<!---->
+<!--                <h2 class="section-title">Introduction.</h2>-->
+<!--                <p>Hello everyone! Im <b>Lorem</b>, currently working as Junir Software Devloper. I am always passionate about programming, love to create useful modern applications & provide great client support. </b></p>-->
+<!--                <ul>-->
+<!--                    <li>Date of Birth: 04 June, 1990</li>-->
+<!--                    <li>Country: Philippines</li>-->
+<!--                </ul>-->
+<!--                <div class="wow slideInUp"><a href="#">Download CV</a></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<section id="skills">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-4">-->
+<!--                <h2 class="section-title">Skills.</h2>-->
+<!--                <p>I am a full stack web developer. I can do back-end and front-end development. Passionate in learning new things and creating new ideas.</p>-->
+<!---->
+<!--            </div>-->
+<!--            <div class="col-md-4">-->
+<!--                <h2 class="section-title">Back-end</h2>-->
+<!--                <ul class="wow fadeInLeft">-->
+<!--                    <li>PHP/PHP Laravel</li>-->
+<!--                    <li>JQuery</li>-->
+<!--                    <li>MySQL</li>-->
+<!--                    <li>Java</li>-->
+<!--                    <li>Visual Basic</li>-->
+<!---->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <div class="col-md-4">-->
+<!--                <h2 class="section-title">Front-end</h2>-->
+<!--                <ul class="wow fadeInRight">-->
+<!--                    <li>HTML5</li>-->
+<!--                    <li>CSS3</li>-->
+<!--                    <li>Photoshop(Basic)</li>-->
+<!---->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
-            </div>
-            <div class="col-md-4">
-                <h2 class="section-title">Back-end</h2>
-                <ul class="wow fadeInLeft">
-                    <li>PHP/PHP Laravel</li>
-                    <li>JQuery</li>
-                    <li>MySQL</li>
-                    <li>Java</li>
-                    <li>Visual Basic</li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h2 class="section-title">Front-end</h2>
-                <ul class="wow fadeInRight">
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>Photoshop(Basic)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section id="skills-1">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-4">-->
+<!--                <h2 class="section-title">Skills.</h2>-->
+<!--                <p>I am a full stack web developer. I can do back-end and front-end development. Passionate in learning new things and creating new ideas.</p>-->
+<!---->
+<!--            </div>-->
+<!--            <div class="col-md-4">-->
+<!--                <h2 class="section-title">Back-end</h2>-->
+<!--                <ul class="wow fadeInLeft">-->
+<!--                    <li>PHP/PHP Laravel</li>-->
+<!--                    <li>JQuery</li>-->
+<!--                    <li>MySQL</li>-->
+<!--                    <li>Java</li>-->
+<!--                    <li>Visual Basic</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <div class="col-md-4">-->
+<!--                <h2 class="section-title">Front-end</h2>-->
+<!--                <ul class="wow fadeInRight">-->
+<!--                    <li>HTML5</li>-->
+<!--                    <li>CSS3</li>-->
+<!--                    <li>Photoshop(Basic)</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 <section id="portfolio">
 
@@ -287,18 +282,20 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="wow fadeInDown"><span>2016</span></div>
-                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Pamantasan ng Lungsod ng Pasig</div>
-                <div><h4>Bachelor of Science in Information Technology</h4></div>
+                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
+                <div><h4>Loren Ipsum</h4></div>
                 <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
             </div>
             <div class="col-md-4">
-                <div class="wow fadeInDown"><span>2012</span></div>
-                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Sagad High School</div>
+                <div class="wow fadeInDown"><span>2002</span></div>
+                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
+                <div><h4>Loren Ipsum</h4></div>
                 <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
             </div>
             <div class="col-md-4">
-                <div class="wow fadeInDown"><span>2007</span></div>
-                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Liberato Damian Elem. School</div>
+                <div class="wow fadeInDown"><span>2002</span></div>
+                <div class="icon-position"><span class="fa fa-book fa-lg"></span>Loren Ipsum</div>
+                <div><h4>Loren Ipsum</h4></div>
                 <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel volutpat nunc, ac tristique sem. Mauris ut est nisi. Sed gravida nulla in venenatis aliquam. Sed ipsum augue, egestas et tellus in, mollis accumsan ex.</p>
             </div>
         </div>
@@ -380,7 +377,15 @@
 </footer>
 <script>
 
+    $('.slickers').slick({
+        slidesToShow:  3,
+        arrows: true,
+        dots: true,
 
+        infinite:true,
+        verticalSwiping:true,
+        scroll:true
+    });
 
 
     var a = 5;
