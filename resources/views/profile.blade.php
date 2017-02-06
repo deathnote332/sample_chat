@@ -10,13 +10,13 @@
                         <a class="page-scroll" href="#about">Lorem</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#skills">Lorem</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#portfolio">Lorem</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#experience">Lorem</a>
+                        <a class="page-scroll" href="#">Lorem</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Lorem</a>
                     </li>
 
                 </ul>
@@ -62,13 +62,13 @@
                         <a class="page-scroll" href="#about">Lorem</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#skills">Lorem</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#portfolio">Lorem</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#experience">Lorem</a>
+                        <a class="page-scroll" href="#">Lorem</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Lorem</a>
                     </li>
 
                 </ul>
@@ -95,9 +95,33 @@
             <div class="col-md-5 col-md-offset-1">
                 <img src="../assets/images/background.jpg">
             </div>
-
         </div>
-
+    </div>
+</section>
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title">This is what i do.</h2>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <span class="fa fa-laptop fa-4x"></span>
+                <h3>DESKTOP APPLICATION</h3>
+                <p>Create useful desktop application/stand alone system for clients.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa fa-code fa-4x"></span>
+                <h3>WEB DEVELOPMENT</h3>
+                <p>Building responsive, easy to edit and customize website application.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa fa-camera-retro fa-4x"></span>
+                <h3>PHOTOGRAPHY</h3>
+                <p>Photography is my passion. I love to capture every moment.</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -189,53 +213,85 @@
             <div class="col-md-12">
                 <h2 class="section-title">Portfolio.</h2>
             </div>
-
         </div>
         <div class="row">
-            <div class="col-md-3 ">
-                <div class="portfolio-items">
-                    <img class="grow center-block" src="../assets/images/background.jpg">
-                </div>
+            <div class="col-md-12 col-xs-12 text-center">
+                <ul>
+                    <li>
+                        <button class="btn filter" data-filter="all">All</button>
+                    </li>
+                    <li>
+                        <button class="btn filter" data-filter=".web">Web</button>
+                    </li>
+                    <li>
+                        <button class="btn filter" data-filter=".desktop">Desktop</button>
+                    </li>
+
+                </ul>
             </div>
-            <div class="col-md-3 ">
-                <div class="portfolio-items">
-                    <img class="grow center-block" src="../assets/images/background.jpg">
+        </div>
+
+
+        <div id="mix-wrapper">
+            <div class="row" >
+                <div class="col-md-3 col-xs-6 mix web">
+                    <div class="portfolio-items">
+                        <img class="grow center-block" src="../assets/images/background.jpg">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="portfolio-items">
-                    <img class="grow center-block" src="../assets/images/background.jpg">
+                <div class="col-md-3 col-xs-6 mix web">
+                    <div class="portfolio-items">
+                        <img class="grow center-block" src="../assets/images/background.jpg">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="portfolio-items">
-                    <img class="grow center-block" src="../assets/images/background.jpg">
+                <div class="col-md-3 col-xs-6 mix web">
+                    <div class="portfolio-items">
+                        <img class="grow center-block" src="../assets/images/background.jpg">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="portfolio-items">
-                    <img class="grow center-block" src="../assets/images/background.jpg">
+                <div class="col-md-3 col-xs-6 mix desktop">
+                    <div class="portfolio-items">
+                        <img class="grow center-block" src="../assets/images/background.jpg">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="portfolio-items">
-                    <img class="grow center-block" src="../assets/images/background.jpg">
+                <div class="col-md-3 col-xs-6 mix desktop">
+                    <div class="portfolio-items">
+                        <img class="grow center-block" src="../assets/images/background.jpg">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="portfolio-items">
-                    <img class="grow center-block" src="../assets/images/background.jpg">
+                <div class="col-md-3 col-xs-6 mix desktop">
+                    <div class="portfolio-items">
+                        <img class="grow center-block" src="../assets/images/background.jpg">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="portfolio-items">
-                    <img class="grow center-block" src="../assets/images/background.jpg">
+                <div class="col-md-3 col-xs-6 mix desktop">
+                    <div class="portfolio-items">
+                        <img class="grow center-block" src="../assets/images/background.jpg">
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6 mix web">
+                    <div class="portfolio-items">
+                        <img class="grow center-block" src="../assets/images/background.jpg">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
+    </div>
 </section>
+
+<section id="skills">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title">Skill.</h2>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 <section id="experience">
     <div class="container">
         <div class="row">
@@ -375,6 +431,8 @@
         </div>
     </div>
 </footer>
+<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js?v=2.1.2"></script>
+
 <script>
 
     $('.slickers').slick({
@@ -393,7 +451,7 @@
     a = a+b;
     b = a - b;
     a = a - b;
-
+    $('#mix-wrapper').mixItUp();
 
     console.log(a+" "+b);
 
@@ -413,7 +471,10 @@
 
     $(document).ready(function(){
         new WOW().init();
+
     })
+
+
 
 </script>
 

@@ -4,7 +4,7 @@ html,body,.profile-image{
     height: 100%;
     font-family: 'Poppins', sans-serif;
     display: block;
-
+    color: white;
 
 }
 .profile-image{
@@ -184,7 +184,7 @@ p,ul li{
     padding: 15px 0px;
 }
 
-#about,#introduction,#skills,#skills-1,#portfolio,#experience,#contact{
+#about,#introduction,#services,#skills,#portfolio,#experience,#contact{
     background: #fdfdfe;
     color: #5a5252;
 }
@@ -194,7 +194,7 @@ p,ul li{
 
 
 #about{
-    padding-top: 60px;
+    padding-top: 35px;
 
 }
 ul{
@@ -207,10 +207,7 @@ ul{
     margin-top: 10px;
 }
 #about ul li{
-
     padding: 10px 0px;
-
-
 }
 
 #about a{
@@ -230,13 +227,53 @@ ul{
     width: 100% ;
 }
 
+#services{
+    padding: 0px 0px 60px 0px;
+    border-bottom: 1px solid #F1EBEB;
+}
 
+#services .fa{
+    color:black;
+}
+
+#skills{
+    padding: 60px 0px;
+}
 
 
 #portfolio{
-    padding: 80px 0;
+    padding: 40px 0;
     border-bottom: 1px solid #F1EBEB;
 }
+#portfolio .col-md-1:nth-child(2),.col-md-1:nth-child(2){
+    padding: 0;
+    margin-left: 2px;
+}
+#portfolio ul{display: block;padding-bottom: 10px}
+#portfolio ul li{
+    display: inline-block;
+}
+#portfolio ul li button{
+    border: solid 1px #F1EBEB;
+    border-radius: 0;
+    width: 80px;
+    background: #fbfcfd;
+}
+
+#portfolio .active{
+    background: #000000;
+    color:white;
+}
+#portfolio button:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+#mix-wrapper .col-md-3{
+    display: none;
+}
+
+
 
 .portfolio-items{
     margin-bottom: 10px;
