@@ -75,11 +75,10 @@ return array(
             $theme->asset()->add('animate.css', 'assets/css/animate.css');
             $theme->asset()->add('animate.js', 'assets/js/wow.min.js');
 
-            $theme->asset()->add('slick.js', 'assets/js/slick.js');
-            $theme->asset()->add('slick-theme.css', 'assets/css/slick-theme.css');
-            $theme->asset()->add('slick.css', 'assets/css/slick.css');
+
 
             $theme->asset()->add('mixitup.min.js', 'assets/js/mixitup.min.js');
+            $theme->asset()->add('circle.min.js', 'assets/js/circle-progress.min.js');
 
 
 

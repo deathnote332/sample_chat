@@ -2,28 +2,9 @@
 <!--HEADER-->
 <div class="profile-image" id="top" data-spy="scroll">
     <div class="container">
-        <div class="header-nav row">
 
-            <div class="header-nav-list col-md-12">
-                <ul>
-                    <li>
-                        <a class="page-scroll" href="#about">Lorem</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Lorem</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#">Lorem</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#">Lorem</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 col-xs-12">
                 <h1>Hi! I'm Lorem</h1>
 
                 <h2 class="cd-headline clip">
@@ -36,6 +17,7 @@
                 </h2>
                 <div><a class="page-scroll view-details slideInUp" href="#about">VIEW DETAILS</a> </div>
             </div>
+
         </div>
     </div>
 
@@ -65,7 +47,7 @@
                         <a class="page-scroll" href="#portfolio">Lorem</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Lorem</a>
+                        <a class="page-scroll" href="#skills">Lorem</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#">Lorem</a>
@@ -85,7 +67,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <p>Hello everyone! Im <b>Loreasdasdam</b>, currently working as Junior Software Devloper. I had been working as web and mobile developer in the corporate world.   I am always passionate about programming, love to create useful applications and provide great client support.  </b></p>
+                <p>Hello everyone! Im <b>Loreasdasdam</b>, currently working as Junior Software Developer. I've been working as web and mobile developer for almost 1 year in this field.   I am always passionate about programming, love to create useful applications and provide great client support.  </b></p>
                 <ul>
                     <li>Date of Birth: 04 June, 1990</li>
                     <li>Country: Philippines</li>
@@ -107,14 +89,14 @@
         </div>
         <div class="row text-center">
             <div class="col-md-4">
-                <span class="fa fa-laptop fa-4x"></span>
-                <h3>DESKTOP APPLICATION</h3>
-                <p>Create useful desktop application/stand alone system for clients.</p>
-            </div>
-            <div class="col-md-4">
                 <span class="fa fa-code fa-4x"></span>
                 <h3>WEB DEVELOPMENT</h3>
                 <p>Building responsive, easy to edit and customize website application.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa fa-laptop fa-4x"></span>
+                <h3>DESKTOP APPLICATION</h3>
+                <p>Create useful desktop application/stand alone system for clients.</p>
             </div>
             <div class="col-md-4">
                 <span class="fa fa-camera-retro fa-4x"></span>
@@ -237,41 +219,89 @@
                 <div class="col-md-3 col-xs-6 mix web">
                     <div class="portfolio-items">
                         <img class="grow center-block" src="../assets/images/background.jpg">
+                        <div class="item-details">
+                            <div class="item-details-name">
+                               <h2>Title</h2>
+                                <div>asdasd</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-6 mix web">
                     <div class="portfolio-items">
                         <img class="grow center-block" src="../assets/images/background.jpg">
+                        <div class="item-details">
+                            <div class="item-details-name">
+                                <h2>Title</h2>
+                                <div>asdasd</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-6 mix web">
                     <div class="portfolio-items">
                         <img class="grow center-block" src="../assets/images/background.jpg">
+                        <div class="item-details">
+                            <div class="item-details-name">
+                                <h2>Title</h2>
+                                <div>asdasd</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-6 mix desktop">
                     <div class="portfolio-items">
                         <img class="grow center-block" src="../assets/images/background.jpg">
+                        <div class="item-details">
+                            <div class="item-details-name">
+                                <h2>Title</h2>
+                                <div>asdasd</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-6 mix desktop">
                     <div class="portfolio-items">
                         <img class="grow center-block" src="../assets/images/background.jpg">
+                        <div class="item-details">
+                            <div class="item-details-name">
+                                <h2>Title</h2>
+                                <div>asdasd</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-6 mix desktop">
                     <div class="portfolio-items">
                         <img class="grow center-block" src="../assets/images/background.jpg">
+                        <div class="item-details">
+                            <div class="item-details-name">
+                                <h2>Title</h2>
+                                <div>asdasd</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-6 mix desktop">
                     <div class="portfolio-items">
                         <img class="grow center-block" src="../assets/images/background.jpg">
+                        <div class="item-details">
+                            <div class="item-details-name">
+                                < <h2>Title</h2>
+                                <div>asdasd</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-6 mix web">
                     <div class="portfolio-items">
                         <img class="grow center-block" src="../assets/images/background.jpg">
+                        <div class="item-details">
+                            <div class="item-details-name">
+                                <h2>Title</h2>
+                                <div>asdasd</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -283,10 +313,59 @@
 <section id="skills">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 ">
                 <h2 class="section-title">Skill.</h2>
             </div>
+        </div>
 
+        <div class="row circles">
+            <div class="col-md-12 text-center">
+
+                <div class="row">
+                    <div class="col-md-2  col-md-offset-1">
+                        <div id="be-circle1">
+                            <div class="percentage">
+                                5%
+                            </div>
+                        </div>
+                        <h5>PHP</h5>
+
+                    </div>
+                    <div class="col-md-2 ">
+                        <div id="be-circle2">
+                            <div class="percentage">
+                                5%
+                            </div>
+                        </div>
+                        <h5>JQUERY</h5>
+                    </div>
+                    <div class="col-md-2 ">
+                        <div id="be-circle3">
+                            <div class="percentage">
+                                5%
+                            </div>
+                        </div>
+                        <h5>MYSQL</h5>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="fe-circle1">
+                            <div class="percentage">
+                                5%
+                            </div>
+                        </div>
+                        <h5>HTML</h5>
+                    </div>
+                    <div class="col-md-2 ">
+                        <div id="fe-circle2">
+                            <div class="percentage">
+                                5%
+                            </div>
+                        </div>
+                        <h5>CSS</h5>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
@@ -419,6 +498,9 @@
                     <li>
                         <span class="fa fa-github fa-lg"></span>
                     </li>
+                    <li>
+                        <span class="fa fa-stack-overflow fa-lg"></span>
+                    </li>
 
                 </ul>
             </div>
@@ -435,15 +517,6 @@
 
 <script>
 
-    $('.slickers').slick({
-        slidesToShow:  3,
-        arrows: true,
-        dots: true,
-
-        infinite:true,
-        verticalSwiping:true,
-        scroll:true
-    });
 
 
     var a = 5;
@@ -472,7 +545,55 @@
     $(document).ready(function(){
         new WOW().init();
 
+        var circle1 =   $('#be-circle1').circleProgress({
+            value:.60,
+            size: 100,
+            thickness:3,
+            fill:{}
+        }).on('circle-animation-progress',function(e,v,step){
+            $(this).find('.percentage').text(Math.round(100 * step.toFixed(2).substr(1)) + ' %');
+        });
+
+        var circle2 = $('#be-circle2').circleProgress({
+            value:.50,
+            size: 100,
+            thickness:3,
+            fill:{}
+        }).on('circle-animation-progress',function(e,v,step){
+            $(this).find('.percentage').text(Math.round(100 * step.toFixed(2).substr(1)) + ' %');
+        });
+
+        var circle3 = $('#be-circle3').circleProgress({
+            value:.60,
+            size: 100,
+            thickness:3,
+            fill:{}
+        }).on('circle-animation-progress',function(e,v,step){
+            $(this).find('.percentage').text(Math.round(100 * step.toFixed(2).substr(1)) + ' %');
+        });
+
+
+        var circle1 =   $('#fe-circle1').circleProgress({
+            value:.45,
+            size: 100,
+            thickness:3,
+            fill:{}
+        }).on('circle-animation-progress',function(e,v,step){
+            $(this).find('.percentage').text(Math.round(100 * step.toFixed(2).substr(1)) + ' %');
+        });
+
+        var circle2 = $('#fe-circle2').circleProgress({
+            value:.45,
+            size: 100,
+            thickness:3,
+            fill:{}
+        }).on('circle-animation-progress',function(e,v,step){
+            $(this).find('.percentage').text(Math.round(100 * step.toFixed(2).substr(1)) + ' %');
+        });
+
+
     })
+
 
 
 

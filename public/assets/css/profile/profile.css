@@ -13,6 +13,16 @@ html,body,.profile-image{
     background: #111111;
 }
 
+.profile-image .container{
+    height: 100%;
+    display: table;
+}
+
+.profile-image .container .row{
+    display: table-cell;
+    vertical-align: middle;
+}
+
 
 .container{
     height: 100%;
@@ -194,7 +204,7 @@ p,ul li{
 
 
 #about{
-    padding-top: 35px;
+    padding-top: 40px;
 
 }
 ul{
@@ -236,10 +246,6 @@ ul{
     color:black;
 }
 
-#skills{
-    padding: 60px 0px;
-}
-
 
 #portfolio{
     padding: 40px 0;
@@ -273,23 +279,64 @@ ul{
     display: none;
 }
 
-
-
 .portfolio-items{
     margin-bottom: 10px;
     overflow: hidden;
     position: relative;
     display: block;
 }
+
+.portfolio-items .item-details{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+
+.portfolio-items .item-details:hover{
+    opacity: 1;
+    transition: all 0.35s;
+}
+
+.portfolio-items .item-details .item-details-name{
+    top: 25%;
+    position: relative;
+    color: white;
+}
+
 .portfolio-items img{
     height: 200px;
     width: 100%;
-    transition: all 0.5s ease;
+
 }
 
-.portfolio-items img:hover{
-    transform: scale(1.15);
+/*.portfolio-items img:hover{*/
+    /*transform: scale(1.15);*/
+/*}*/
+
+#skills{
+    padding: 40px 0px;
 }
+#skills .circles .col-md-2{
+    position: relative;
+}
+#skills .circles span{
+    position: relative;
+}
+.percentage{
+    position: relative;
+
+    bottom: 65px;
+    left: 5px;
+
+}
+
+
+
+
 
 #experience{
     padding: 80px 0;
