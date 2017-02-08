@@ -339,8 +339,7 @@ ul{
 
 
 #experience{
-    padding: 80px 0;
-    border-bottom: 1px solid #F1EBEB;
+    
 }
 #experience .container .row{
     display: block;
@@ -446,11 +445,19 @@ textarea.form-control{
 .footer ul li{
     display: inline-block;
     padding: 0px 10px;
-}
-#sample{
-    color: black;
-}
 
+
+}
+a.fa:hover{
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+a.fa:focus{
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
 
 
 

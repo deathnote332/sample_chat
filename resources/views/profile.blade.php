@@ -41,16 +41,16 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">Lorem</a>
+                        <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Lorem</a>
+                        <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#skills">Lorem</a>
+                        <a class="page-scroll" href="#skills">Skill</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Lorem</a>
+                        <a class="page-scroll" href="#contact">Contact</a>
                     </li>
 
                 </ul>
@@ -487,19 +487,19 @@
             <div class="col-md-8 col-md-offset-2 text-center">
                 <ul>
                     <li>
-                        <span class="fa fa-facebook fa-lg"></span>
+                        <a class="fa fa-facebook fa-2x"></a>
                     </li>
                     <li>
-                        <span class="fa fa-instagram fa-lg"></span>
+                        <a class="fa fa-instagram fa-2x"></a>
                     </li>
                     <li>
-                        <span class="fa fa-google-plus fa-lg"></span>
+                        <a class="fa fa-google-plus fa-2x"></a>
                     </li>
                     <li>
-                        <span class="fa fa-github fa-lg"></span>
+                        <a href="https://github.com/deathnote332" class="fa fa-github fa-2x"></a>
                     </li>
                     <li>
-                        <span class="fa fa-stack-overflow fa-lg"></span>
+                        <a href="http://stackoverflow.com/users/6850994/paul" class="fa fa-stack-overflow fa-2x"></a>
                     </li>
 
                 </ul>
